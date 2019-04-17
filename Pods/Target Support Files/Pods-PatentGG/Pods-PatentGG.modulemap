@@ -1,0 +1,6 @@
+framework module Pods_PatentGG {
+  umbrella header "Pods-PatentGG-umbrella.h"
+
+  export *
+  module * { export * }
+}
