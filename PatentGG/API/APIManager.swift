@@ -58,7 +58,7 @@ extension APIManager {//this one, for checking all the possible errors,answer,et
         return dataTask
     }
     
-    func fetch<T: Decodable>(request: URLRequest, parse: @escaping ([NSAttributedString.Key:AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void){// function of deserializing JSON,lol
+    func fetch<T: JSONDecodable>(request: URLRequest, parse: @escaping ([NSAttributedString.Key:AnyObject]) -> T?, completionHandler: @escaping (APIResult<T>) -> Void){// function of deserializing JSON,lol
         let dataTask = JSONTaskWith(request: request) { (json, response, error ) in
             guard let json = json else{
                 if let error = error {

@@ -34,7 +34,7 @@ final class APIPatentManager: APIManager{
     convenience init(apiKey: String){
         self.init(sessionConfiguration: URLSessionConfiguration.default, apiKey: apiKey)
     }//somebulshit one after :(
-    /* func fetchCountries(country: Country, completionHandler: @escaping (APIResult<CountryObject>)-> Void){
+    func fetchCountries(country: Country, completionHandler: @escaping (APIResult<CountryObject>)-> Void){
         let request = URLCreating(country: country).request
         fetch(request: request, parse: { (json) -> CountryInfo? in
             if let countryData = json[NSAttributedString.Key("country")] as? [NSAttributedString.Key : AnyObject]{//maybe bug here with array type
@@ -43,7 +43,7 @@ final class APIPatentManager: APIManager{
                 return nil
             }
         }, completionHandler: completionHandler)
-    }*/
+    }
 }
 
 /*let urlString = chosingCountry(country: .Russia)

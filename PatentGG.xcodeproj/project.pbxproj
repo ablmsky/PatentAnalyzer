@@ -89,18 +89,34 @@
 			isa = PBXGroup;
 			children = (
 				6F81218B225A1C5800CE3FC3 /* AppDelegate.swift */,
-				6F75344122671945007E348A /* APIManager.swift */,
-				6F120945225A634E0094928F /* CountryObject.swift */,
-				6F120947225A69740094928F /* CountriesAndCodes.swift */,
+				6FD9CD32226867AA00414B34 /* API */,
+				6FD9CD312268678F00414B34 /* Country */,
 				6F81218D225A1C5800CE3FC3 /* ViewController.swift */,
 				6F81218F225A1C5800CE3FC3 /* Main.storyboard */,
 				6F812192225A1C5A00CE3FC3 /* Assets.xcassets */,
 				6F812194225A1C5A00CE3FC3 /* LaunchScreen.storyboard */,
 				6F812197225A1C5A00CE3FC3 /* Info.plist */,
-				6F75344322671DEA007E348A /* ErrorManager.swift */,
-				6F75344522672E21007E348A /* APIPatentManager.swift */,
 			);
 			path = PatentGG;
+			sourceTree = "<group>";
+		};
+		6FD9CD312268678F00414B34 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				6F120947225A69740094928F /* CountriesAndCodes.swift */,
+				6F120945225A634E0094928F /* CountryObject.swift */,
+			);
+			path = Country;
+			sourceTree = "<group>";
+		};
+		6FD9CD32226867AA00414B34 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6F75344322671DEA007E348A /* ErrorManager.swift */,
+				6F75344522672E21007E348A /* APIPatentManager.swift */,
+				6F75344122671945007E348A /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

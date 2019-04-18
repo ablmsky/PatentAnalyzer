@@ -29,7 +29,7 @@ struct CountryInfo{//Country names
     var value: String
 }
 
-extension CountryInfo: Decodable{
+extension CountryInfo: JSONDecodable{
     init?(JSON: [NSAttributedString.Key : AnyObject]){
         guard let id = JSON[NSAttributedString.Key("id")] as? String,
             let value = JSON[NSAttributedString.Key("value")] as? String else{
