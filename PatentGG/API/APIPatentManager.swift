@@ -20,8 +20,6 @@ struct URLCreating: FinalURLPoint{
 }
 
 final class APIPatentManager: APIManager{
-   
-    
     let sessionConfiguration: URLSessionConfiguration
     lazy var session: URLSession = {
         return URLSession(configuration: self.sessionConfiguration)
@@ -36,13 +34,20 @@ final class APIPatentManager: APIManager{
     }//somebulshit one after :(
     func fetchCountries(country: Country, completionHandler: @escaping (APIResult<CountryObject>)-> Void){
         let request = URLCreating(country: country).request
-        fetch(request: request, parse: { (json) -> CountryInfo? in
+        /*fetch(request: request, parse: { (json) -> CountryInfo? in
             if let countryData = json[NSAttributedString.Key("country")] as? [NSAttributedString.Key : AnyObject]{//maybe bug here with array type
+                //code from stack
+                let decoder =  JSONDecoder()
+                let array = try JSONSerialization.jsonObject(with: data) as? [Any] ?? []
+                let rootElement = array[1]
+                let rootData = try JSONSerialization.data(withJSONObject: rootElement, options: [])
+                let countryObjects = try decoder.decode([CountryObject].self, from: rootData)
+                //
                 return CountryInfo(JSON: countryData)
             } else{
                 return nil
             }
-        }, completionHandler: completionHandler)
+        }, completionHandler: completionHandler)*/
     }
 }
 

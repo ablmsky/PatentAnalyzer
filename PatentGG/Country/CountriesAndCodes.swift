@@ -1,6 +1,6 @@
 
 import Foundation
-enum Country{//kinda dictionary for each country and ISO code
+enum Country: String, CaseIterable{//kinda dictionary for each country and ISO code
     case Afghanistan
     case Albania
     case Algeria
@@ -239,6 +239,13 @@ enum Country{//kinda dictionary for each country and ISO code
     case Yemen
     case Zambia
     case Zimbabwe
+    static func returnAllCountries()->[String]{
+        var array: [String] = []
+        for value in Country.allCases {
+            array.append(String(describing: value))
+        }
+        return array
+    }
     static func compareCountryAndCode(country: Country)->String{
         switch country{
             case .Andorra: return "AD"
