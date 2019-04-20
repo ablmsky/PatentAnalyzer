@@ -13,6 +13,7 @@
 		6F75344222671945007E348A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F75344122671945007E348A /* APIManager.swift */; };
 		6F75344422671DEA007E348A /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F75344322671DEA007E348A /* ErrorManager.swift */; };
 		6F75344622672E21007E348A /* APIPatentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F75344522672E21007E348A /* APIPatentManager.swift */; };
+		6F803A7A226BA17400AD5A69 /* GraphicsAndStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F803A79226BA17400AD5A69 /* GraphicsAndStatistic.swift */; };
 		6F81218C225A1C5800CE3FC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F81218B225A1C5800CE3FC3 /* AppDelegate.swift */; };
 		6F81218E225A1C5800CE3FC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F81218D225A1C5800CE3FC3 /* ViewController.swift */; };
 		6F812191225A1C5800CE3FC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F81218F225A1C5800CE3FC3 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		6F75344122671945007E348A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		6F75344322671DEA007E348A /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		6F75344522672E21007E348A /* APIPatentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPatentManager.swift; sourceTree = "<group>"; };
+		6F803A79226BA17400AD5A69 /* GraphicsAndStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicsAndStatistic.swift; sourceTree = "<group>"; };
 		6F812188225A1C5800CE3FC3 /* PatentGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatentGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F81218B225A1C5800CE3FC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6F81218D225A1C5800CE3FC3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				6F812192225A1C5A00CE3FC3 /* Assets.xcassets */,
 				6F812194225A1C5A00CE3FC3 /* LaunchScreen.storyboard */,
 				6F812197225A1C5A00CE3FC3 /* Info.plist */,
+				6F803A79226BA17400AD5A69 /* GraphicsAndStatistic.swift */,
 			);
 			path = PatentGG;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F75344422671DEA007E348A /* ErrorManager.swift in Sources */,
+				6F803A7A226BA17400AD5A69 /* GraphicsAndStatistic.swift in Sources */,
 				6F81218E225A1C5800CE3FC3 /* ViewController.swift in Sources */,
 				6F120946225A634E0094928F /* CountryObject.swift in Sources */,
 				6F75344222671945007E348A /* APIManager.swift in Sources */,
