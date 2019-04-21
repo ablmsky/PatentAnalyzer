@@ -14,14 +14,20 @@ class ViewController: UIViewController {
     private var countrySource = Country.returnAllCountries()
     private var yearsStraight = returnYearsValue(reverse: false)
     private var yearsReverse = returnYearsValue(reverse: true)
+    private var countriesResponedResult = APIPatentManager(country: Country.Russia).responseResult
+    @IBOutlet weak var buttonComplete: UIButton!
     @IBOutlet weak var labelYearTill: UILabel!
     @IBOutlet weak var labelYearFrom: UILabel!
     @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
         pickerView.delegate = self
+       // print(countriesResponedResult?.responseResult ?? <#default value#>)
+        //print(countryData)
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
@@ -55,28 +61,5 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         return String (yearsReverse[row])
     }
     
-    /*func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        let countrySelected = countriesArray[pickerView.selectedRow(inComponent: 0)]
-        let stateNumberSelected = stateNumbersArray[pickerView.selectedRow(inComponent: 1)]
-        lblPickerSelection.text = "\(countrySelected) has \(stateNumberSelected) number of states."
-    }*/
-    /*
-     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-     if component == 0 {
-     return countriesArray.count
-     }
-     return stateNumbersArray.count
-     }
-     
-     //MARK:- UIPickerViewDelegates methods
-     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-     
-     if component == 0 {
-     return countriesArray[row]
-     }
-     return stateNumbersArray[row]
-     }
- */
 }
 

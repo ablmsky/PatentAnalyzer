@@ -9,7 +9,7 @@
 import Foundation
 
 public func returnYearsValue(reverse: Bool) -> [Int]{
-    let array = Array(1960...2016)
+    let array = Array(1969...2016)
         if !reverse{
             return array
         }
