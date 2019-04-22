@@ -17,7 +17,6 @@ struct CountryObject: Decodable{//Country features data
     }
 }
 
-
 struct CountryInfo: Decodable{//Country names
     var id: String?
     var value: String?
@@ -27,13 +26,4 @@ struct CountryInfo: Decodable{//Country names
     }
 }
 
-func getValuesFromJson(){
-    let address = chosingCountry(country: .Russia)
-}
-func chosingCountry(country: Country) -> String{
-    let iso = Country.compareCountryAndCode(country: country)
-    let apiAddress = "https://api.worldbank.org/v2/country/"
-    let apiAddressGetterInfo = "/indicator/IP.PAT.RESD?format=json"
-    return apiAddress+iso+apiAddressGetterInfo
-}
 
