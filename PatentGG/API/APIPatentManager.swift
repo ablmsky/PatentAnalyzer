@@ -38,6 +38,7 @@ public class APIPatentManager: APIManager {
 extension ViewController{
     func dataAndResponse(url: URL?, object: APIPatentManager) {
         guard let urlString = url else { return }
+        let semaphore = DispatchSemaphore(value: 0)
         URLSession.shared.dataTask(with: urlString){ (data, response, error) in
             DispatchQueue.main.async(execute: {
             guard let data = data else { return }
@@ -55,7 +56,9 @@ extension ViewController{
                 print(error)
             }
             })
+            semaphore.signal()
         }.resume()
+        _ = semaphore.wait(timeout: .distantFuture)
     }
 }
    
