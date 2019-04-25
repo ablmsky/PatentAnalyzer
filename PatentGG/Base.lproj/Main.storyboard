@@ -64,6 +64,9 @@
                                 <state key="normal" title="Complete">
                                     <color key="titleColor" red="0.97649401426315308" green="0.97730976343154907" blue="0.93138855695724487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="onButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XqE-Ed-ln7"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mAh-Tt-6st">
                                 <rect key="frame" x="0.0" y="447" width="414" height="274"/>

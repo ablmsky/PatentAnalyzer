@@ -1,3 +1,10 @@
+//
+//  APIManager.swift
+//  PatentGG
+//
+//  Created by Anton Ablamsky on 25/04/2019.
+//  Copyright © 2019 Anton Ablamskiy. All rights reserved.
+//
 
 import Foundation
 
@@ -18,12 +25,10 @@ extension APIManager{
     }
 }
 /*extension APIManager{
-    func responseAndResult(url: URLRequest)->[CountryObject]{
-        var responseRes: [CountryObject] = []
-        URLSession.shared.dataTask(with: url)
-            .resume()
-        return responseRes
-    }
-}*/
-
-
+ func responseAndResult(url: URLRequest)->[CountryObject]{
+ var responseRes: [CountryObject] = []
+ URLSession.shared.dataTask(with: url)
+ .resume()
+ return responseRes
+ }
+ }*/

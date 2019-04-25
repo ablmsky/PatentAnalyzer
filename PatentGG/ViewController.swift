@@ -20,14 +20,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var labelYearFrom: UILabel!
     @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBAction func onButtonClick(_ sender: Any) {
+        var inputCountry: String// data which i get from response
+        let inputYearFrom: Int
+        let inputYearTill: Int
+        inputCountry = labelView.text!
+        inputYearFrom = Int(labelYearFrom.text!)!
+        inputYearTill = Int(labelYearTill.text!)!
+        countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: inputCountry)!)
+        var countryData: [CountryObject] = []
+        do{
+            countryData = try dataAndResponse(url: countriesResponedResult.url)//here is data is empty
+        } catch let error{
+            print(error)
+        }
+        print(countryData)
+        print(inputYearFrom)
+        print(inputYearTill)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
         pickerView.delegate = self
-        countriesResponedResult.url = APIPatentManager.getURL(country: Country.Russia)
+        /*countriesResponedResult.url = APIPatentManager.getURL(country: Country.Russia)
         dataAndResponse(url: countriesResponedResult.url, object: countriesResponedResult)
-        print(countriesResponedResult.responseResult)
+        print(countriesResponedResult.responseResult)*/
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
