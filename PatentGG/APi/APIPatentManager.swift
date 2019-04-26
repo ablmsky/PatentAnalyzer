@@ -45,17 +45,13 @@ extension ViewController{
             DispatchQueue.main.async(execute: {
                 guard let data = data else { return }
                 guard error == nil else { return }
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
-                    let decoder =  JSONDecoder()
-                    let array = try JSONSerialization.jsonObject(with: data) as? [Any] ?? []
-                    let rootElement = array[1]
-                    let rootData = try JSONSerialization.data(withJSONObject: rootElement, options: [])
-                    let countryObjects = try decoder.decode([CountryObject].self, from: rootData)
-                     object = countryObjects
-                    print(countryObjects)//only after returning nil, there will be smthng
-                } catch let error {
-                    print(error)
-                }
+                    let root = try decoder.decode(Root.self, from: data)
+                    object = root.countryObjects
+                    print(object)
+                } catch { print(error) }
             })
             semaphore.signal()
             }.resume()

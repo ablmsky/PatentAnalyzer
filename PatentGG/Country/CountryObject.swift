@@ -7,23 +7,33 @@
 //
 
 import Foundation
-struct CountryObject: Decodable{//Country features data
-    var country: CountryInfo?
-    var date: String?
-    var value: Int?
-    private enum RawValues: String, Decodable{
-        case date = "date"
-        case value = "value"
+
+struct Root : Decodable {
+    
+    let info : Info
+    let countryObjects : [CountryObject]
+    
+    init(from decoder: Decoder) throws {
+        var arrayContrainer = try decoder.unkeyedContainer()
+        info = try arrayContrainer.decode(Info.self)
+        countryObjects = try arrayContrainer.decode([CountryObject].self)
     }
 }
 
-struct CountryInfo: Decodable{//Country names
-    var id: String?
-    var value: String?
-    private enum RawValues: String, Decodable{
-        case id = "id"
-        case value = "value"
-    }
+struct Info : Decodable {
+    let page, pages, perPage: Int
+    let lastupdated: String
+}
+
+struct CountryObject : Decodable {
+    let country: CountryInfo
+    let date: String
+    let value: Int?
+}
+
+struct CountryInfo : Decodable { //Country names
+    let id: String
+    let value: String
 }
 
 
