@@ -8,7 +8,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Andorra
     case Angola
     case Anguilla
-    case Antarctica
     case AntiguaAndBarbuda
     case Argentina
     case Armenia
@@ -256,7 +255,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Albania: return "AL"
             case .Armenia: return "AM"
             case .Angola: return "AO"
-            case .Antarctica: return "AQ"
             case .Argentina: return "AR"
             case .AmericanSamoa: return "AS"
             case .Austria: return "AT"

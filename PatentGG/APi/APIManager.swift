@@ -17,18 +17,13 @@ protocol APIManager{
     var url: URL?{ get set }
     static func getURL(country: Country) -> URL?
 }
-
+enum NetworkError: Error{
+    case url
+}
 extension APIManager{
     static func getURL(country: Country) -> URL?{
         let urlForSession = URLCreating(country: country)
         return urlForSession.getRequest()
     }
 }
-/*extension APIManager{
- func responseAndResult(url: URLRequest)->[CountryObject]{
- var responseRes: [CountryObject] = []
- URLSession.shared.dataTask(with: url)
- .resume()
- return responseRes
- }
- }*/
+

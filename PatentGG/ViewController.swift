@@ -28,13 +28,12 @@ class ViewController: UIViewController {
         inputYearFrom = Int(labelYearFrom.text!)!
         inputYearTill = Int(labelYearTill.text!)!
         countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: inputCountry)!)
-        var countryData: [CountryObject] = []
         do{
-            countryData = try dataAndResponse(url: countriesResponedResult.url)//here is data is empty
+            countriesResponedResult.responseResult = try countriesResponedResult.dataAndResponse(url: countriesResponedResult.url)
         } catch let error{
             print(error)
         }
-        //print(countryData)
+        print(countriesResponedResult.responseResult)
         print(inputYearFrom)
         print(inputYearTill)
     }
@@ -44,9 +43,6 @@ class ViewController: UIViewController {
         buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
         pickerView.delegate = self
-        /*countriesResponedResult.url = APIPatentManager.getURL(country: Country.Russia)
-        dataAndResponse(url: countriesResponedResult.url, object: countriesResponedResult)
-        print(countriesResponedResult.responseResult)*/
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{

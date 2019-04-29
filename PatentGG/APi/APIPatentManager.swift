@@ -20,9 +20,7 @@ struct URLCreating: FinalURLPoint{
         return self.request
     }
 }
-enum NetworkError: Error{
-    case url
-}
+
 
 public class APIPatentManager: APIManager {
     var url: URL?
@@ -36,7 +34,7 @@ public class APIPatentManager: APIManager {
         self.responseResult = []
     }
 }
-extension ViewController{
+extension APIPatentManager{
     func dataAndResponse(url: URL?) throws -> [CountryObject] {
         var object: [CountryObject] = []
         guard let urlString = url else { throw NetworkError.url }
@@ -49,7 +47,7 @@ extension ViewController{
             do {
                 let root = try decoder.decode(Root.self, from: data)
                 object = root.countryObjects
-                print(object)
+                //print(object)
             } catch { print(error) }
         
             if (object.count>0){
