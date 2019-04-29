@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.380213"
+            timestampString = "578230255.25694"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -134,13 +134,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.380756"
+            timestampString = "578230255.257053"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
             endingLineNumber = "66"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "pickerView(_:didSelectRow:inComponent:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -150,13 +150,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.381011"
+            timestampString = "578230255.257147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
             endingLineNumber = "17"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "ViewController"
+            landmarkType = "3">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -272,13 +272,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.381268"
+            timestampString = "578230255.257248"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
             endingLineNumber = "49"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -288,13 +288,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.381494"
+            timestampString = "578230255.257324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -304,13 +304,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.381716"
+            timestampString = "578230255.2573971"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onButtonClick(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -320,7 +320,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/APi/APIPatentManager.swift"
-            timestampString = "577972605.233798"
+            timestampString = "578230255.2574641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -368,13 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/APi/APIPatentManager.swift"
-            timestampString = "577972605.234233"
+            timestampString = "578230255.259751"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "dataAndResponse(url:)"
-            landmarkType = "7">
+            startingLineNumber = "64"
+            endingLineNumber = "64">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -384,13 +382,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewController.swift"
-            timestampString = "577970623.381966"
+            timestampString = "578230255.260458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "onButtonClick(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

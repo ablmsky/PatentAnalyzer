@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         } catch let error{
             print(error)
         }
-        print(countryData)
+        //print(countryData)
         print(inputYearFrom)
         print(inputYearTill)
     }

@@ -42,18 +42,19 @@ extension ViewController{
         guard let urlString = url else { throw NetworkError.url }
         let semaphore = DispatchSemaphore(value: 0)
         URLSession.shared.dataTask(with: urlString){ (data, response, error) in
-            DispatchQueue.main.async(execute: {
-                guard let data = data else { return }
-                guard error == nil else { return }
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                do {
-                    let root = try decoder.decode(Root.self, from: data)
-                    object = root.countryObjects
-                    print(object)
-                } catch { print(error) }
-            })
+            guard let data = data else { return }
+            guard error == nil else { return }
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let root = try decoder.decode(Root.self, from: data)
+                object = root.countryObjects
+                print(object)
+            } catch { print(error) }
+        
+            if (object.count>0){
             semaphore.signal()
+            }
             }.resume()
         _ = semaphore.wait(timeout: .distantFuture)
         return object
