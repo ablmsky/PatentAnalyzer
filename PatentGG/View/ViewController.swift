@@ -11,31 +11,23 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
+    //remove to ViewModel
+    //this part about initialization Values For PickerView
     private var countrySource = Country.returnAllCountries()
     private var yearsStraight = returnYearsValue(reverse: false)
     private var yearsReverse = returnYearsValue(reverse: true)
-    public var countriesResponedResult = APIPatentManager()
+
+    public var viewModelData: ViewModelModelData?
+    
     @IBOutlet weak var buttonComplete: UIButton!
     @IBOutlet weak var labelYearTill: UILabel!
     @IBOutlet weak var labelYearFrom: UILabel!
     @IBOutlet weak var labelView: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
+    
     @IBAction func onButtonClick(_ sender: Any) {
-        var inputCountry: String// data which i get from response
-        let inputYearFrom: Int
-        let inputYearTill: Int
-        inputCountry = labelView.text!
-        inputYearFrom = Int(labelYearFrom.text!)!
-        inputYearTill = Int(labelYearTill.text!)!
-        countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: inputCountry)!)
-        do{
-            countriesResponedResult.responseResult = try countriesResponedResult.dataAndResponse(url: countriesResponedResult.url)
-        } catch let error{
-            print(error)
-        }
-        print(countriesResponedResult.responseResult)
-        print(inputYearFrom)
-        print(inputYearTill)
+        let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
+        viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)
     }
 
     override func viewDidLoad() {
@@ -59,6 +51,8 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         return yearsReverse.count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //to ViewModel
+        //cast types and init labels (connected to pickerView)
         let countrySelected = countrySource[pickerView.selectedRow(inComponent: 0)]
         labelView.text = countrySelected
         let yearFromSelected = yearsStraight[pickerView.selectedRow(inComponent: 1)]
@@ -68,6 +62,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        //would need to change
         if component == 0{
             return NSAttributedString(string: countrySource[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }

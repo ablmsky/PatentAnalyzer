@@ -22,7 +22,7 @@ struct URLCreating: FinalURLPoint{
 }
 
 
-public class APIPatentManager: APIManager {
+public class APIPatentManager: APIManager, CountryReturningProtocol {
     var url: URL?
     var responseResult: [CountryObject]
     static func getURL(country: Country) -> URL?{
@@ -47,7 +47,6 @@ extension APIPatentManager{
             do {
                 let root = try decoder.decode(Root.self, from: data)
                 object = root.countryObjects
-                //print(object)
             } catch { print(error) }
         
             if (object.count>0){
