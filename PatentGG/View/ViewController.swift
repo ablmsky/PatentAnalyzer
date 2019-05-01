@@ -11,13 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
-    //remove to ViewModel
-    //this part about initialization Values For PickerView
-    private var countrySource = Country.returnAllCountries()
-    private var yearsStraight = returnYearsValue(reverse: false)
-    private var yearsReverse = returnYearsValue(reverse: true)
-
+    
     public var viewModelData: ViewModelModelData?
+    public var gettingValues: ValueViewModel?
     
     @IBOutlet weak var buttonComplete: UIButton!
     @IBOutlet weak var labelYearTill: UILabel!
@@ -29,8 +25,8 @@ class ViewController: UIViewController {
         let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
         viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)
     }
-
     override func viewDidLoad() {
+        gettingValues = ValueViewModel()
         super.viewDidLoad()
         buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
@@ -43,33 +39,30 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if component == 0{
-            return countrySource.count
+            return gettingValues?.returnCountrySource().count ?? 0
         }
         if component == 1{
-            return yearsStraight.count
+            return gettingValues?.returnStraightYears().count ?? 0
         }
-        return yearsReverse.count
+        return gettingValues?.returnReversYears().count ?? 0
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //to ViewModel
-        //cast types and init labels (connected to pickerView)
-        let countrySelected = countrySource[pickerView.selectedRow(inComponent: 0)]
+        let countrySelected = gettingValues?.returnCountrySource()[pickerView.selectedRow(inComponent: 0)]
         labelView.text = countrySelected
-        let yearFromSelected = yearsStraight[pickerView.selectedRow(inComponent: 1)]
-        labelYearFrom.text = String(yearFromSelected)
-        let yearTillSelected = yearsReverse[pickerView.selectedRow(inComponent: 2)]
-        labelYearTill.text = String(yearTillSelected)
+        let yearFromSelected = gettingValues?.returnStraightYears()[pickerView.selectedRow(inComponent: 1)]
+        labelYearFrom.text = String(yearFromSelected!)
+        let yearTillSelected = gettingValues?.returnReversYears()[pickerView.selectedRow(inComponent: 2)]
+        labelYearTill.text = String(yearTillSelected!)
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        //would need to change
         if component == 0{
-            return NSAttributedString(string: countrySource[row], attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            return NSAttributedString(string: (gettingValues?.returnCountrySource()[row])! , attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
         if component == 1{
-            return  NSAttributedString(string: String(yearsStraight[row]), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+            return  NSAttributedString(string: String(gettingValues!.returnStraightYears()[row]), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
-        return NSAttributedString(string: String (yearsReverse[row]), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        return NSAttributedString(string: String (gettingValues!.returnReversYears()[row]), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
 }
 
