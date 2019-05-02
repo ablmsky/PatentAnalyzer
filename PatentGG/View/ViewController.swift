@@ -31,9 +31,17 @@ class ViewController: UIViewController {
         buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
         pickerView.delegate = self
+        createAlert(title: "How to use it", message: "Choose country and time period to show it.")
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func createAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
