@@ -17,7 +17,8 @@ class FirstViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         okComplete.layer.cornerRadius = 5
-        textField.layer.cornerRadius = 5
+        textField.layer.cornerRadius = 15
+        textField.setGradientBackground(colorOne: UIColor.darkGray, colorTwo: UIColor.lightGray)
         previewButton.layer.cornerRadius = 5
         askingLabel.startBlink()
     }
@@ -29,6 +30,19 @@ extension UILabel {
                        options:[.allowUserInteraction, .curveEaseInOut, .autoreverse, .repeat],
                        animations: { self.alpha = 0 },
                        completion: nil)
+    }
+}
+extension UITextView{
+    func setGradientBackground(colorOne: UIColor, colorTwo: UIColor) {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = [colorOne.cgColor, colorTwo.cgColor]
+        gradientLayer.locations = [0.0, 7.5]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
+        gradientLayer.endPoint = CGPoint(x: 0.0, y: 0.0)
+        
+        layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 //may use it for some uncorrect data, animation like: password isn't right

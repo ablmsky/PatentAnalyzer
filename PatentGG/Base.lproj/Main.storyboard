@@ -142,7 +142,7 @@
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="scaleToFill" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDG-kM-hea">
                                 <rect key="frame" x="35" y="208" width="344" height="482"/>
-                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="344" id="Abg-bI-goV"/>
                                     <constraint firstAttribute="height" constant="482" id="WiH-fa-KvZ"/>
@@ -172,7 +172,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                     <constraint firstAttribute="width" constant="243" id="BCj-iW-zTf"/>
                                     <constraint firstAttribute="height" constant="49" id="rI6-2z-G0E"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Top for 2017">
                                     <color key="titleColor" red="0.352345407" green="0.63667452339999997" blue="0.80338138339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -183,7 +183,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                     <constraint firstAttribute="height" constant="49" id="07L-lN-JTf"/>
                                     <constraint firstAttribute="width" constant="243" id="ZZt-CC-atJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Best for region">
                                     <color key="titleColor" red="0.35234540700912476" green="0.63667452335357666" blue="0.80338138341903687" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -194,7 +194,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                     <constraint firstAttribute="width" constant="243" id="FYY-3X-VvR"/>
                                     <constraint firstAttribute="height" constant="49" id="MSi-rh-mo8"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Compare top countries">
                                     <color key="titleColor" red="0.352345407" green="0.63667452339999997" blue="0.80338138339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -209,9 +209,6 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 <state key="normal" title="What is this?">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
-                                <connections>
-                                    <action selector="bounce:" destination="ODz-0z-h50" eventType="touchUpInside" id="aL8-Cp-Fba"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

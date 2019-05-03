@@ -31,7 +31,7 @@ class ViewController: UIViewController {
         buttonComplete.layer.cornerRadius = 5
         pickerView.dataSource = self
         pickerView.delegate = self
-        createAlert(title: "How to use it", message: "Choose country and time period to show it.")
+        createAlert(title: "How to use it", message: "Choose country and time period to show.")
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
@@ -40,6 +40,10 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action) in
             alert.dismiss(animated: true, completion: nil)
         }))
+        alert.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)]), forKey: "attributedTitle")
+        alert.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18,weight: UIFont.Weight.light)]), forKey: "attributedMessage")
+        //alert.view.backgroundColor = UIColor.darkGray
+        alert.view.tintColor = UIColor.blue
         self.present(alert, animated: true, completion: nil)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
