@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Alamofire
 import SwiftyJSON
+import SPStorkController
 
 class ViewController: UIViewController {
     
@@ -24,6 +24,11 @@ class ViewController: UIViewController {
     @IBAction func onButtonClick(_ sender: Any) {
         let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
         viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)
+        let controller = CharViewController()
+        let transitionDelegate = SPStorkTransitioningDelegate()
+        controller.transitioningDelegate = transitionDelegate
+        controller.modalPresentationStyle = .custom
+        self.present(controller, animated: true,completion: nil)
     }
     override func viewDidLoad() {
         gettingValues = ValueViewModel()

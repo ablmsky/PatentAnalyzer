@@ -1,20 +1,22 @@
 PODS:
-  - Alamofire (4.8.2)
-  - SwiftyJSON (3.1.4)
+  - Charts (3.2.2):
+    - Charts/Core (= 3.2.2)
+  - Charts/Core (3.2.2)
+  - SPStorkController (1.6)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.3)
-  - SwiftyJSON (~> 3.1)
+  - Charts
+  - SPStorkController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Alamofire
-    - SwiftyJSON
+    - Charts
+    - SPStorkController
 
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  Charts: f69cf0518b6d1d62608ca504248f1bbe0b6ae77e
+  SPStorkController: 54293a8a1ca3c691a09eb6274b6e487b602e975a
 
-PODFILE CHECKSUM: 45e0adc062abfdb197818c8e97f21e03dc69bfa8
+PODFILE CHECKSUM: 67dfb3689ae700a7a69fead8045e11fb36572109
 
 COCOAPODS: 1.6.1

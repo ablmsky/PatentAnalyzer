@@ -74,6 +74,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XqE-Ed-ln7"/>
+                                    <segue destination="DTw-tq-l7V" kind="show" id="ytZ-ou-cUg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -117,6 +118,32 @@
             </objects>
             <point key="canvasLocation" x="2468.1159420289855" y="95.758928571428569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="oMK-aG-Fpa">
+            <objects>
+                <viewController id="DTw-tq-l7V" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5f3-Zc-FIZ" customClass="CharViewController">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-S3-32V">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="S9S-S3-32V" secondAttribute="trailing" id="HmN-8N-lCg"/>
+                            <constraint firstItem="S9S-S3-32V" firstAttribute="leading" secondItem="5f3-Zc-FIZ" secondAttribute="leading" id="PVJ-nm-fyG"/>
+                            <constraint firstItem="S9S-S3-32V" firstAttribute="top" secondItem="JQo-vB-Wyc" secondAttribute="top" id="uxp-U0-Eqg"/>
+                            <constraint firstAttribute="bottom" secondItem="S9S-S3-32V" secondAttribute="bottom" id="wqV-LE-7s4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JQo-vB-Wyc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="way-9r-cgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3160.8695652173915" y="95.758928571428569"/>
+        </scene>
         <!--First View Controller-->
         <scene sceneID="Bup-eq-pQL">
             <objects>
@@ -125,6 +152,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="45r-bS-2na">
+                                <rect key="frame" x="42" y="183" width="330" height="492"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="330" id="ACa-OS-9dZ"/>
+                                    <constraint firstAttribute="height" constant="492" id="uyc-By-DyG"/>
+                                </constraints>
+                                <string key="text">This app about patents.
+ 
+We'll show you amount for each country by the years. 
+
+If you don't know, what you want to explore, choose one of our topics:</string>
+                                <color key="textColor" red="0.97649401426315308" green="0.97730976343154907" blue="0.93138855695724487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhn-N1-ZDg">
                                 <rect key="frame" x="147" y="771" width="120" height="55"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -140,22 +183,6 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="d95-bR-VMd"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.84999999999999998" contentMode="scaleToFill" textAlignment="center" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CDG-kM-hea">
-                                <rect key="frame" x="35" y="208" width="344" height="482"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="344" id="Abg-bI-goV"/>
-                                    <constraint firstAttribute="height" constant="482" id="WiH-fa-KvZ"/>
-                                </constraints>
-                                <string key="text">This app about patents.
- 
-We'll show you amount for each country by the years. 
-
-If you don't know, what you want to explore, choose one of our topics:</string>
-                                <color key="textColor" red="0.97649401426315308" green="0.97730976343154907" blue="0.93138855695724487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Go to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-1k-faw">
                                 <rect key="frame" x="85.5" y="698" width="243" height="52"/>
                                 <constraints>
@@ -199,15 +226,16 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                     <color key="titleColor" red="0.352345407" green="0.63667452339999997" blue="0.80338138339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" alpha="0.59999999999999998" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDi-EK-6HW">
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDi-EK-6HW">
                                 <rect key="frame" x="99.5" y="125" width="215" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="215" id="LEL-Ys-GEy"/>
                                     <constraint firstAttribute="height" constant="50" id="bWU-27-dvt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
                                 <state key="normal" title="What is this?">
-                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                    <color key="titleColor" red="0.352345407" green="0.63667452339999997" blue="0.80338138339999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
                         </subviews>
@@ -216,16 +244,16 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                             <constraint firstItem="WgK-TF-QQZ" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="1KP-Xr-hSA"/>
                             <constraint firstItem="KrF-ab-m2D" firstAttribute="bottom" secondItem="jhn-N1-ZDg" secondAttribute="bottom" constant="36" id="1q4-v2-LQG"/>
                             <constraint firstItem="jhn-N1-ZDg" firstAttribute="top" secondItem="LIy-1k-faw" secondAttribute="bottom" constant="21" id="7B5-dv-h6s"/>
+                            <constraint firstItem="45r-bS-2na" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="7ZN-Ta-kUA"/>
                             <constraint firstItem="fhr-4f-Zbd" firstAttribute="top" secondItem="WgK-TF-QQZ" secondAttribute="bottom" constant="30" id="Q4S-Ck-tUz"/>
                             <constraint firstItem="jhn-N1-ZDg" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="Re3-ob-M7i"/>
+                            <constraint firstAttribute="bottom" secondItem="gEe-l3-wBQ" secondAttribute="bottom" constant="379" id="WPj-WA-9aI"/>
                             <constraint firstItem="gEe-l3-wBQ" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="WSB-bu-JoS"/>
-                            <constraint firstItem="gEe-l3-wBQ" firstAttribute="top" secondItem="CDG-kM-hea" secondAttribute="bottom" constant="-222" id="aVr-uR-y7Y"/>
                             <constraint firstItem="rDi-EK-6HW" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="acn-Fa-ujs"/>
                             <constraint firstItem="rDi-EK-6HW" firstAttribute="top" secondItem="KrF-ab-m2D" secondAttribute="top" constant="37" id="fDy-vN-1At"/>
                             <constraint firstItem="WgK-TF-QQZ" firstAttribute="top" secondItem="gEe-l3-wBQ" secondAttribute="bottom" constant="30" id="gq4-a7-ZY9"/>
+                            <constraint firstItem="45r-bS-2na" firstAttribute="top" secondItem="rDi-EK-6HW" secondAttribute="bottom" constant="8" id="kQd-j4-8a6"/>
                             <constraint firstItem="fhr-4f-Zbd" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="klV-WL-W1v"/>
-                            <constraint firstItem="LIy-1k-faw" firstAttribute="top" secondItem="CDG-kM-hea" secondAttribute="bottom" constant="8" symbolic="YES" id="sBu-Cg-k4x"/>
-                            <constraint firstItem="CDG-kM-hea" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="t4K-Op-SHu"/>
                             <constraint firstItem="gEe-l3-wBQ" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="uis-Pu-nZM"/>
                             <constraint firstItem="LIy-1k-faw" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="yWe-X8-Pev"/>
                         </constraints>
@@ -236,7 +264,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                         <outlet property="askingLabel" destination="LIy-1k-faw" id="D1r-nx-Exx"/>
                         <outlet property="okComplete" destination="jhn-N1-ZDg" id="tza-kt-XeF"/>
                         <outlet property="previewButton" destination="rDi-EK-6HW" id="eDX-Iy-Nnx"/>
-                        <outlet property="textField" destination="CDG-kM-hea" id="bnm-vN-GhH"/>
+                        <outlet property="textField" destination="45r-bS-2na" id="XSH-bo-gMw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQi-fz-U68" userLabel="First Responder" sceneMemberID="firstResponder"/>

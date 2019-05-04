@@ -21,6 +21,7 @@ class FirstViewController: UIViewController{
         textField.setGradientBackground(colorOne: UIColor.darkGray, colorTwo: UIColor.lightGray)
         previewButton.layer.cornerRadius = 5
         askingLabel.startBlink()
+        textField.isEditable = false 
     }
 }
 extension UILabel {

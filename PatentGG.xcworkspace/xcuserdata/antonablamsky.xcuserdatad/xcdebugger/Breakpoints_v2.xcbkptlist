@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/View/ViewController.swift"
-            timestampString = "578525561.797613"
+            timestampString = "578693291.706973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "onButtonClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
