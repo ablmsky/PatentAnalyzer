@@ -400,7 +400,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "578335757.508363"
+            timestampString = "578765172.306574"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -416,12 +416,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/View/ViewController.swift"
-            timestampString = "578693291.706973"
+            timestampString = "578765172.3070149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "onButtonClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/View/ViewController.swift"
+            timestampString = "578765172.3070771"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "onButtonClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/ViewModel/ModelData.swift"
+            timestampString = "578765172.307133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "init(requestSource:years:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatentGG.DataFromRequest.__allocating_init(requestSource: PatentGG.SetRequest, years: Swift.Array&lt;Swift.Int&gt;) -&gt; PatentGG.DataFromRequest"
+                  moduleName = "PatentGG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonablamsky/Projects/PatentGG/PatentGG/ViewModel/ModelData.swift"
+                  timestampString = "578765172.337489"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatentGG.DataFromRequest.init(requestSource: PatentGG.SetRequest, years: Swift.Array&lt;Swift.Int&gt;) -&gt; PatentGG.DataFromRequest"
+                  moduleName = "PatentGG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonablamsky/Projects/PatentGG/PatentGG/ViewModel/ModelData.swift"
+                  timestampString = "578765172.340643"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "65">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/ViewModel/ModelData.swift"
+            timestampString = "578765172.307445"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "makeRequest()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

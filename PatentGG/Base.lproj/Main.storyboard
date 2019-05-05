@@ -118,16 +118,16 @@
             </objects>
             <point key="canvasLocation" x="2468.1159420289855" y="95.758928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Chart View Controller-->
         <scene sceneID="oMK-aG-Fpa">
             <objects>
-                <viewController id="DTw-tq-l7V" sceneMemberID="viewController">
+                <viewController id="DTw-tq-l7V" customClass="ChartViewController" customModule="PatentGG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5f3-Zc-FIZ" customClass="CharViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-S3-32V">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="1912"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,6 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQo-vB-Wyc"/>
                     </view>
+                    <size key="freeformSize" width="414" height="2000"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="way-9r-cgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -169,11 +170,12 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhn-N1-ZDg">
-                                <rect key="frame" x="147" y="771" width="120" height="55"/>
+                                <rect key="frame" x="155" y="771" width="104" height="55"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="CiU-fh-kg3"/>
-                                    <constraint firstAttribute="width" constant="120" id="pHl-cc-J91"/>
+                                    <constraint firstAttribute="width" constant="104" id="FBQ-ac-KmV"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Mnm-3R-qVi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <state key="normal" title="Go">
@@ -184,9 +186,8 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.25" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press Go to continue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIy-1k-faw">
-                                <rect key="frame" x="85.5" y="698" width="243" height="52"/>
+                                <rect key="frame" x="96" y="698" width="222.5" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="243" id="6Ed-RM-Yuc"/>
                                     <constraint firstAttribute="height" constant="52" id="afH-OS-YiQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -194,9 +195,8 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WgK-TF-QQZ">
-                                <rect key="frame" x="85.5" y="547" width="243" height="49"/>
+                                <rect key="frame" x="143.5" y="547" width="127" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="243" id="BCj-iW-zTf"/>
                                     <constraint firstAttribute="height" constant="49" id="rI6-2z-G0E"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
@@ -205,10 +205,9 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhr-4f-Zbd">
-                                <rect key="frame" x="85.5" y="626" width="243" height="49"/>
+                                <rect key="frame" x="133.5" y="626" width="147" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="07L-lN-JTf"/>
-                                    <constraint firstAttribute="width" constant="243" id="ZZt-CC-atJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <state key="normal" title="Best for region">
@@ -216,9 +215,8 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-l3-wBQ">
-                                <rect key="frame" x="85.5" y="468" width="243" height="49"/>
+                                <rect key="frame" x="91" y="468" width="232" height="49"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="243" id="FYY-3X-VvR"/>
                                     <constraint firstAttribute="height" constant="49" id="MSi-rh-mo8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
@@ -227,9 +225,8 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </state>
                             </button>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDi-EK-6HW">
-                                <rect key="frame" x="99.5" y="125" width="215" height="50"/>
+                                <rect key="frame" x="115.5" y="125" width="183" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="215" id="LEL-Ys-GEy"/>
                                     <constraint firstAttribute="height" constant="50" id="bWU-27-dvt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="33"/>
