@@ -11,13 +11,16 @@ import SPStorkController
 import Charts
 
 class ChartViewController: UIViewController{
+    var viewModelData: ViewModelModelData?
     var myScrollView = UIScrollView()
     let coordX = 6.5//step for x coordinate on charts view
     var chartViewFirst = BarChartView()
     var chartViewSecond = BarChartView()
-   // var entry = BarChartDataEntry
+    
+    // var entry = BarChartDataEntry
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myScrollView.setNeedsLayout()
         myScrollView.layoutIfNeeded()
         self.modalPresentationCapturesStatusBarAppearance = true

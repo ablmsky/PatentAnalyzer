@@ -64,5 +64,19 @@ class CountryValues: CountryReturningProtocol{
         }
         return valuePerYears
     }
+    func checkContent(elements: inout CountryValues?){
+        // this function check data, and if all values(numbers) eqls to 0
+        //then delete all data, and print for user on UI - That no data avaible to this country
+        var flag = true
+        for element in elements!.valuePerYear{
+            if (element?.value == 0 || element?.year == 0){}
+            else{
+                flag = false
+            }
+        }
+        if flag == true{
+            elements = nil
+        }
+    }
 }
 

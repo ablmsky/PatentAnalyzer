@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     
     @IBAction func onButtonClick(_ sender: Any) {
         let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
-        viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)
+        viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)// all getting data here
         let controller = ChartViewController()
         let transitionDelegate = SPStorkTransitioningDelegate()
         controller.transitioningDelegate = transitionDelegate
@@ -39,6 +39,9 @@ class ViewController: UIViewController {
     }
 }
 extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
+    func returnDataToNextView()->ViewModelModelData?{
+        return viewModelData
+    }
     func createAlert(title: String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action) in

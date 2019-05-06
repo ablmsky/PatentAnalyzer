@@ -7,16 +7,7 @@
 //
 
 import Foundation
-
-protocol ViewModelModelData{
-    var inputValue: String? { get set }
-    var outputValue: String? { get }
-    var inputValuesInt: [Int] { get set }
-    func setInput(variable: String)
-    func getOutput()->String // function to update some properties (label.text or smthng)
-    func returnData() -> CountryReturningProtocol?
-}
-
+//ViewModel for ViewController class
 struct SetRequest{
     var inputValue: String? //value which get info about "country" to request
     var outputValue: String? // value for some label/etc. to change in view
@@ -50,6 +41,7 @@ class DataFromRequest: ViewModelModelData{
     var countryData: CountryValues?
     init(requestSource: SetRequest, years: [Int]){
         self.countryData = CountryValues(countriesData: requestSource.makeRequest())
+        self.countryData?.checkContent(elements: &self.countryData)
         self.inputValuesInt = years
     }
     
