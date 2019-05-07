@@ -11,11 +11,17 @@ Like in example with charts from Charts Pod https://cocoapods.org/pods/Charts
 
 Stack of technology which will be here:
   First of all, MVVM arch.
+  
   Some patterns like Observer
+  
   RxSwift for async 
+  
   Working with a network (with Alomofire maybe)
+  
   Some Interface uniques libraries like Stork (already in app (ChartViewController))
+  
   Working with JSON
+  
   And try to follow SOLID rules.
   
 
