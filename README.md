@@ -10,6 +10,7 @@ I get data from worlbank.org parse it and try to visualize all info.
 Like in example with charts from Charts Pod https://cocoapods.org/pods/Charts
 
 Stack of technology which will be here:
+  
   First of all, MVVM arch.
   
   Some patterns like Observer
