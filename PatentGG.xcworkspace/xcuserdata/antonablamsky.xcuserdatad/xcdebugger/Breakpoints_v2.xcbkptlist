@@ -336,7 +336,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "578831185.5400079"
+            timestampString = "579297421.37354"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -352,7 +352,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "578831185.5401241"
+            timestampString = "579297421.373616"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -368,7 +368,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "578831185.540216"
+            timestampString = "579297421.373675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -384,7 +384,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "578831185.540302"
+            timestampString = "579297421.373732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -400,7 +400,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "578831185.540458"
+            timestampString = "579295419.845466"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/View/ViewController.swift"
-            timestampString = "578831093.351213"
+            timestampString = "579297421.373818"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "onButtonClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -432,7 +432,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/View/ViewController.swift"
-            timestampString = "578831093.351272"
+            timestampString = "579297421.3738869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -448,7 +448,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "578831185.54105"
+            timestampString = "579295419.845646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
@@ -496,13 +496,77 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "578831185.541487"
+            timestampString = "579295419.845687"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
             landmarkName = "makeRequest()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/Model/APi/APIPatentManager.swift"
+            timestampString = "579004039.498734"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "dataAndResponse(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/Model/APi/APIPatentManager.swift"
+            timestampString = "579004039.499355"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "dataAndResponse(url:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PatentGG.APIPatentManager.dataAndResponse(url: Swift.Optional&lt;Foundation.URL&gt;) throws -&gt; Swift.Array&lt;PatentGG.CountryObject&gt;"
+                  moduleName = "PatentGG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonablamsky/Projects/PatentGG/PatentGG/Model/APi/APIPatentManager.swift"
+                  timestampString = "579004039.530592"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "666">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in PatentGG.APIPatentManager.dataAndResponse(url: Swift.Optional&lt;Foundation.URL&gt;) throws -&gt; Swift.Array&lt;PatentGG.CountryObject&gt;"
+                  moduleName = "PatentGG"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonablamsky/Projects/PatentGG/PatentGG/Model/APi/APIPatentManager.swift"
+                  timestampString = "579004039.533839"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "235">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

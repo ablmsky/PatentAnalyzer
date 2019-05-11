@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
         viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)// all getting data here
         let controller = ChartViewController()
+        controller.viewModelData = viewModelData
         let transitionDelegate = SPStorkTransitioningDelegate()
         controller.transitioningDelegate = transitionDelegate
         controller.modalPresentationStyle = .custom

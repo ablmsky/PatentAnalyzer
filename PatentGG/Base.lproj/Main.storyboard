@@ -123,11 +123,11 @@
             <objects>
                 <viewController id="DTw-tq-l7V" customClass="ChartViewController" customModule="PatentGG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5f3-Zc-FIZ" customClass="CharViewController">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="2000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S9S-S3-32V">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1912"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,7 +139,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JQo-vB-Wyc"/>
                     </view>
-                    <size key="freeformSize" width="414" height="2000"/>
+                    <size key="freeformSize" width="414" height="896"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="way-9r-cgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

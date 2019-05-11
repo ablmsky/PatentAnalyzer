@@ -20,7 +20,6 @@ class ChartViewController: UIViewController{
     // var entry = BarChartDataEntry
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         myScrollView.setNeedsLayout()
         myScrollView.layoutIfNeeded()
         self.modalPresentationCapturesStatusBarAppearance = true
@@ -30,7 +29,12 @@ class ChartViewController: UIViewController{
         chartViewFirst = BarChartView(frame: CGRect(x: coordX, y: 30, width: Double(screenWidth) - (coordX*2) , height: 450))
         chartViewSecond = BarChartView(frame: CGRect(x: coordX, y: 530, width: Double(screenWidth) - (coordX*2), height: 450))
         chartViewSecond.backgroundColor = UIColor.red
-        chartViewFirst.backgroundColor = UIColor.green
+        //chartViewFirst.backgroundColor = UIColor.green
+        //
+        setChart(dataPoints: reorginizedData(forYearsTrue: true), values: reorginizedData(forYearsTrue: false))
+        
+        //
+        
         myScrollView = UIScrollView(frame: self.view.bounds)
         myScrollView.addSubview(chartViewFirst)
         myScrollView.addSubview(chartViewSecond)
@@ -40,5 +44,33 @@ class ChartViewController: UIViewController{
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
+    func reorginizedData(forYearsTrue: Bool)->[Int]{//needed to remove to VM
+        var array: [Int] = []
+        if forYearsTrue{
+            for element in viewModelData!.countryData!.valuePerYear{
+                array.append(element!.year)
+            }
+        }
+        else{
+            for element in viewModelData!.countryData!.valuePerYear{
+                array.append(element!.value)
+            }
+        }
+        return array
+    }
+    func setChart(dataPoints: [Int], values: [Int]) {
+        chartViewFirst.noDataText = "You need to provide data for the chart."
+        var dataEntries: [BarChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = BarChartDataEntry(x: Double(values[i]), y: Double(i))
+            dataEntries.append(dataEntry)
+        }
+        
+        let chartDataSet = BarChartDataSet(values: dataEntries, label: viewModelData!.countryData!.country)
+        let chartData = BarChartData(dataSet: chartDataSet)
+        chartViewFirst.data = chartData
+    }
+        
 }
 
