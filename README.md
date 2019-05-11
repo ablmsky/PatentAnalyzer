@@ -15,9 +15,9 @@ Stack of technology which will be here:
   
   Some patterns like Observer
   
-  RxSwift for async 
+  RxSwift for async and MVVM
   
-  Working with a network (with Alomofire maybe)
+  Working with a network (with Alamofire maybe)
   
   Some Interface uniques libraries like Stork (already in app (ChartViewController))
   
