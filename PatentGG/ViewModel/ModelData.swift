@@ -37,12 +37,15 @@ struct SetRequest{
 class DataFromRequest: ViewModelModelData{
     var inputValue: String?//value which get info about "country" to request
     var outputValue: String?// value for some label/etc. to change in view
-    var inputValuesInt: [Int]
+    var inputValuesInt: [Int]//here is years to select
     var countryData: CountryValues?
     init(requestSource: SetRequest, years: [Int]){
         self.countryData = CountryValues(countriesData: requestSource.makeRequest())
         self.countryData?.checkContent(elements: &self.countryData)
         self.inputValuesInt = years
+        if (self.countryData != nil){
+            selectionByYears()
+        }
     }
     
     func setInput(variable: String){
@@ -55,5 +58,28 @@ class DataFromRequest: ViewModelModelData{
     }
     func returnData() -> CountryReturningProtocol? {
         return self.countryData
+    }
+    func selectionByYears(){
+        var array: [ValuePerYear] = []
+        if (self.inputValuesInt[0]>self.inputValuesInt[1]){
+            let temp = self.inputValuesInt[0]
+            self.inputValuesInt[0] = self.inputValuesInt[1]
+            self.inputValuesInt[1] = temp
+        }
+        for i in 0..<self.countryData!.valuePerYear.count{
+            if (self.countryData!.valuePerYear[i]!.year >= self.inputValuesInt[0] && self.countryData!.valuePerYear[i]!.year <= self.inputValuesInt[1]){
+                array.append(ValuePerYear(value: self.countryData!.valuePerYear[i]!.value, year: self.countryData!.valuePerYear[i]!.year))
+            }
+        }
+        self.countryData!.valuePerYear = array
+    }
+    func allToString()->String{//function to convert data for TextField
+        //TODO check optional values
+        var stringToReturn: String
+        stringToReturn = "\(self.countryData!.country)\n"
+        for element in self.countryData!.valuePerYear.reversed(){
+            stringToReturn.append(contentsOf: "Year: \(element?.year ?? 0)  -  Number of Patent: \(element?.value ?? 0)\n")
+        }
+        return stringToReturn
     }
 }
