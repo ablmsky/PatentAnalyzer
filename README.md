@@ -27,5 +27,6 @@ Stack of technology which will be here:
   
 Demo version were completed! Wathc gif.
 *freezes only on gif:)
+
 ![](PatentAnalyzer.gif)
 
