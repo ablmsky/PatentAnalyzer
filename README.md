@@ -25,4 +25,7 @@ Stack of technology which will be here:
   
   And try to follow SOLID rules.
   
+Demo version were completed! Wathc gif.
+*freezes only on gif:)
+![](PatentAnalyzer.gif)
 
