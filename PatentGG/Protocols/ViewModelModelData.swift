@@ -19,19 +19,26 @@ protocol ViewModelModelData{
     func returnData() -> CountryReturningProtocol?
 }
 extension ViewModelModelData{
-    func reorginizedValues()->[Int]{//needed to remove to VM
+    func reorginizedValues()->[Int]{
         var array: [Int] = []
         for element in self.countryData!.valuePerYear{
             array.append(element!.value)
         }
         return array.reversed()
     }
-    func reorginizedYears()->[String]{//needed to remove to VM
+    func reorginizedYears()->[String]{
         var array: [String] = []
         for element in self.countryData!.valuePerYear{
             array.append(String(element!.year))
         }
         return array.reversed()
+    }
+    func averageValue()->Int{
+        let sum = self.countryData!.valuePerYear.map({$0?.value ?? 0}).reduce(0, +)
+        return Int(sum/self.countryData!.valuePerYear.count)
+    }
+    func sumValue()->Int{
+        return self.countryData!.valuePerYear.map({$0?.value ?? 0}).reduce(0, +)
     }
 }
 
