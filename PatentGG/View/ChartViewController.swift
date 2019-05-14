@@ -10,7 +10,8 @@ import Foundation
 import SPStorkController
 import Charts
 
-class ChartViewController: UIViewController, ChartViewDelegate{
+class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate{
+   
     var viewModelData: ViewModelModelData?
     var myScrollView = UIScrollView()
     let coordX = 6.5//step for x coordinate on charts view
@@ -33,7 +34,6 @@ class ChartViewController: UIViewController, ChartViewDelegate{
         textField = UITextView(frame: CGRect(x: coordX, y: 500, width: Double(screenWidth) - (coordX*2) , height: 100))
         chartViewSecond = PieChartView(frame: CGRect(x: coordX, y: 630, width: Double(screenWidth) - (coordX*2), height: 450))
         descriptionToPieChart = UILabel(frame: CGRect(x: coordX, y: 1050, width: Double(screenWidth) - (coordX*2), height: 50))
-        //chartViewSecond.backgroundColor = UIColor.red
         //checking available data
         if (viewModelData!.countryData == nil){
             chartViewFirst.noDataText = "Sorry, no available data"
@@ -52,6 +52,7 @@ class ChartViewController: UIViewController, ChartViewDelegate{
             textField.defaultValues()
             chartViewFirst.delegate = self
             chartViewSecond.delegate = self
+            
             descriptionToPieChart.text = "This chart demonstrate % from sum on period"
             descriptionToPieChart.defaultValues()
         }
@@ -89,17 +90,19 @@ class ChartViewController: UIViewController, ChartViewDelegate{
         ll.lineColor = UIColor.white
         chartViewFirst.rightAxis.addLimitLine(ll)
         ll.valueTextColor = UIColor.black
-        self.textField.text.append("Average number: \(viewModelData!.averageValue())")
-        
+        self.textField.text.append("Average number: \(viewModelData!.averageValue())\n")
+        self.textField.text.append("Sum number: \(viewModelData!.sumValue())")
     }
+   
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         textField.text = "\nYear: \(getYearsByIndex(highlight.x)) - Number of Patents: \(Int(highlight.y))"
         textField.font = UIFont(name: textField.font!.fontName, size: 20)
-        _ = Timer.scheduledTimer(withTimeInterval: 6.0, repeats: false, block: { timer in
+        _ = Timer.scheduledTimer(withTimeInterval: 3.5, repeats: false, block: { timer in
             self.textField.text = self.startingText
         })
         
     }
+   
     func getYearsByIndex(_ index: Double) -> String{
         var array = viewModelData!.reorginizedYears()
         return array[Int(index)]
@@ -109,11 +112,9 @@ class ChartViewController: UIViewController, ChartViewDelegate{
     func setPieChart(dataPoints: [String], values: [Int]) {
         
         var dataEntries: [ChartDataEntry] = []
-        //let sum = (viewModelData?.sumValue())!
         for i in 0..<dataPoints.count {
             let dataEntry = ChartDataEntry(x: Double(i), y:Double(values[i]))
             dataEntries.append(dataEntry)
-            //(Double(values[i])/Double(sum)) * 100)
         }
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: viewModelData!.countryData!.country)
         pieChartDataSet.colors = ChartColorTemplates.joyful()
@@ -133,13 +134,9 @@ class ChartViewController: UIViewController, ChartViewDelegate{
         formatter.zeroSymbol = ""
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter: formatter))
         chartViewSecond.centerAttributedText = myAttrString
-        //pieChartDataSet.drawIconsEnabled = true
         pieChartDataSet.drawValuesEnabled = true
-       // chartViewSecond.drawEntryLabelsEnabled = true
-        //chartViewSecond.drawMarkers = true// drawSliceTextEnabled = false
         pieChartData.setValueTextColor(.black)
     }
-        
 }
 
 extension BarChartView{
