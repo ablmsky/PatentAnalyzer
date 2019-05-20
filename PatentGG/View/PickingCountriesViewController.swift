@@ -28,6 +28,7 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
     
     
     @IBAction func onButtonCompletedPressed(_ sender: Any) {
+       
         switch countriesToCompare?.count ?? 0{
         case 0: countriesToCompare?.append(countryLabel.text!)
                 yearsToCompare?.append(yearLabel.text!)
@@ -38,7 +39,7 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
             
         case 1: countriesToCompare?.append(countryLabel.text!)
                 yearsToCompare?.append(yearLabel.text!)
-                if (countriesToCompare![0].elementsEqual (countriesToCompare![1])){
+                if (countriesToCompare![0].elementsEqual(countriesToCompare![1])){
                     bounce(self)
                     countriesToCompare!.remove(at: 1)
                 }
@@ -78,6 +79,7 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+       
         if component == 0{
             return NSAttributedString(string: (gettingValues?.returnCountrySource()[row])! , attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         }
@@ -86,15 +88,19 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
     
     
     @IBAction func bounce(_ sender: AnyObject){
+        
         let bounds = completeButton.bounds
         let color = completeButton.backgroundColor
         let text = askingLabel.text
+        
         askingLabel.text = "You can't compare same"
         completeButton.backgroundColor = UIColor.red
+        
         _ = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { timer in
             self.completeButton.backgroundColor = color
             self.askingLabel.text = text
         })
+        
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
             self.completeButton.bounds = CGRect(x: bounds.origin.x - 20, y: bounds.origin.y, width: bounds.size.width + 60, height: bounds.size.height)
         }) { (success:Bool) in

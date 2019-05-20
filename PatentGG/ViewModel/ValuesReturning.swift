@@ -18,5 +18,8 @@ struct ValueViewModel{
     func returnCountrySource() -> [String]{
         return Country.returnAllCountries()
     }
+    func returnRegionSource() -> [String]{
+        return Regions.returnAllRegions()
+    }
     
 }

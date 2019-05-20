@@ -86,10 +86,10 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         
         chartViewFirst.data = chartData
         chartViewFirst.xAxis.valueFormatter = xaxis.valueFormatter
-        let ll = ChartLimitLine(limit: Double(viewModelData?.averageValue() ?? 0), label: "Average")
-        ll.lineColor = UIColor.white
-        chartViewFirst.rightAxis.addLimitLine(ll)
-        ll.valueTextColor = UIColor.black
+        let limitLine = ChartLimitLine(limit: Double(viewModelData?.averageValue() ?? 0), label: "Average")
+        limitLine.lineColor = UIColor.white
+        chartViewFirst.rightAxis.addLimitLine(limitLine)
+        limitLine.valueTextColor = UIColor.black
         self.textField.text.append("Average number: \(viewModelData!.averageValue())\n")
         self.textField.text.append("Sum number: \(viewModelData!.sumValue())")
     }
@@ -127,11 +127,13 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         let myAttrString = NSAttributedString(string: "\((viewModelData?.countryData!.country)!) in % ", attributes: attributes)
         
         let formatter = NumberFormatter()
+        
         formatter.numberStyle = .percent
         formatter.maximumFractionDigits = 2
         formatter.multiplier = 1.0
         formatter.percentSymbol = "%"
         formatter.zeroSymbol = ""
+        
         pieChartData.setValueFormatter(DefaultValueFormatter(formatter: formatter))
         chartViewSecond.centerAttributedText = myAttrString
         pieChartDataSet.drawValuesEnabled = true
