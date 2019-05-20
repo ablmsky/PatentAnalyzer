@@ -24,6 +24,7 @@
 		6F812193225A1C5A00CE3FC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F812192225A1C5A00CE3FC3 /* Assets.xcassets */; };
 		6F812196225A1C5A00CE3FC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F812194225A1C5A00CE3FC3 /* LaunchScreen.storyboard */; };
 		6FA84892227E0D2A0023AA97 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA84891227E0D2A0023AA97 /* ChartViewController.swift */; };
+		6FD6A9E72290A43E000B66D6 /* PickingCountriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FD6A9E62290A43E000B66D6 /* PickingCountriesViewController.swift */; };
 		6FED6CA92273331B00BC84A1 /* 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FED6CA82273331B00BC84A1 /* 120.png */; };
 		6FFCF1682279CAA800395134 /* ValuesReturning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCF1672279CAA800395134 /* ValuesReturning.swift */; };
 		6FFCF16A2279FB5B00395134 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFCF1692279FB5B00395134 /* FirstViewController.swift */; };
@@ -49,6 +50,7 @@
 		6F812195225A1C5A00CE3FC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F812197225A1C5A00CE3FC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA84891227E0D2A0023AA97 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		6FD6A9E62290A43E000B66D6 /* PickingCountriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickingCountriesViewController.swift; sourceTree = "<group>"; };
 		6FED6CA82273331B00BC84A1 /* 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 120.png; sourceTree = SOURCE_ROOT; };
 		6FFCF1672279CAA800395134 /* ValuesReturning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesReturning.swift; sourceTree = "<group>"; };
 		6FFCF1692279FB5B00395134 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				6FFCF1692279FB5B00395134 /* FirstViewController.swift */,
 				6F81218D225A1C5800CE3FC3 /* ViewController.swift */,
 				6FA84891227E0D2A0023AA97 /* ChartViewController.swift */,
+				6FD6A9E62290A43E000B66D6 /* PickingCountriesViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				6FFCF1682279CAA800395134 /* ValuesReturning.swift in Sources */,
 				6F81218C225A1C5800CE3FC3 /* AppDelegate.swift in Sources */,
 				6F7638A8228050F000D8D184 /* ViewModelModelData.swift in Sources */,
+				6FD6A9E72290A43E000B66D6 /* PickingCountriesViewController.swift in Sources */,
 				6F120948225A69740094928F /* CountriesAndCodes.swift in Sources */,
 				6F0D6C6222723DBF009DEA54 /* APIManager.swift in Sources */,
 				6FFCF16A2279FB5B00395134 /* FirstViewController.swift in Sources */,

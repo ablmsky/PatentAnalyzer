@@ -46,18 +46,4 @@ extension UITextView{
         layer.insertSublayer(gradientLayer, at: 0)
     }
 }
-//may use it for some uncorrect data, animation like: password isn't right
-/*@IBAction func bounce(_ sender: AnyObject){
- let bounds = previewButton.bounds
- UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
- self.previewButton.bounds = CGRect(x: bounds.origin.x - 20, y: bounds.origin.y, width: bounds.size.width + 60, height: bounds.size.height)
- }) { (success:Bool) in
- if success {
- 
- UIView.animate(withDuration: 0.5, animations: {
- self.previewButton.bounds = bounds
- })
- 
- }
- }
- }*/
+
