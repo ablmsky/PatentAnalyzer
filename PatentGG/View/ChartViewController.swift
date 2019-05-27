@@ -41,12 +41,13 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         chartViewSecond = PieChartView(frame: CGRect(x: coordX, y: 630, width: Double(screenWidth) - (coordX*2), height: 450))
         descriptionToPieChart = UILabel(frame: CGRect(x: coordX, y: 1050, width: Double(screenWidth) - (coordX*2), height: 50))
         
-        chartViewFirst.noDataText = ""
-        textField.backgroundColor = UIColor.darkGray
+        chartViewFirst.noDataText = " "
+        chartViewSecond.noDataText = " "
+        textField.defaultValues()
         
         self.group.notify(queue: .main){
-            self.activityIndicator.stopAnimating()
             self.textField.text = self.viewModelData?.allToString()
+            self.textField.font = UIFont(name: self.textField.font?.fontName ?? UIFont.systemFontSize.description , size: 20)
             self.activityIndicator.stopAnimating()
             if (self.viewModelData?.countryData != nil){
                 self.textField.text = self.viewModelData?.allToString()
@@ -61,14 +62,6 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
                 
                 self.descriptionToPieChart.text = "This chart demonstrate % from sum on period"
                 self.descriptionToPieChart.defaultValues()
-            }
-                
-            else{
-                self.chartViewFirst.noDataText = "Sorry, no available data"
-                self.chartViewSecond.noDataText = " "
-                self.chartViewFirst.noDataTextColor = UIColor.white
-                self.textField.backgroundColor = UIColor.darkGray
-                self.startingText = " "
             }
             
         }
@@ -190,7 +183,7 @@ extension UITextView{
         self.layer.cornerRadius = 5
         self.textAlignment = NSTextAlignment.center
         self.textColor = UIColor.white
-        self.font = UIFont(name: self.font!.fontName , size: 20)
+        //self.font = UIFont(name: self.font?.fontName ?? UIFont.systemFontSize.description , size: 20)
         self.isEditable = false
     }
 }

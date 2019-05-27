@@ -38,13 +38,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/ablmsky/PatentAnalyzer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6I-Cs-XiC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="github.com/ablmsky/PatentAnalyzer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6I-Cs-XiC">
                                 <rect key="frame" x="20" y="322" width="374" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="CCm-OG-nWH"/>
                                     <constraint firstAttribute="height" constant="29" id="SAn-wV-QeG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <color key="textColor" red="0.23920748317632232" green="0.53988878117304817" blue="0.92260866116751272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -455,7 +455,7 @@ We'll show you amount for each country by the years.
 
 If you don't know, what you want to explore, choose one of our topics:</string>
                                 <color key="textColor" red="0.97649401426315308" green="0.97730976343154907" blue="0.93138855695724487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jhn-N1-ZDg">
@@ -463,7 +463,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="CiU-fh-kg3"/>
-                                    <constraint firstAttribute="width" constant="104" id="FBQ-ac-KmV"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="104" id="FBQ-ac-KmV"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="Mnm-3R-qVi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="29"/>
@@ -497,7 +497,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-l3-wBQ">
-                                <rect key="frame" x="110.5" y="468" width="193" height="49"/>
+                                <rect key="frame" x="110.5" y="521" width="193" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="MSi-rh-mo8"/>
                                 </constraints>
@@ -521,7 +521,7 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhr-4f-Zbd">
-                                <rect key="frame" x="133.5" y="538" width="147" height="49"/>
+                                <rect key="frame" x="133.5" y="578" width="147" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="07L-lN-JTf"/>
                                 </constraints>
@@ -538,11 +538,11 @@ If you don't know, what you want to explore, choose one of our topics:</string>
                         <constraints>
                             <constraint firstItem="WgK-TF-QQZ" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="1KP-Xr-hSA"/>
                             <constraint firstItem="KrF-ab-m2D" firstAttribute="bottom" secondItem="jhn-N1-ZDg" secondAttribute="bottom" constant="36" id="1q4-v2-LQG"/>
-                            <constraint firstItem="fhr-4f-Zbd" firstAttribute="top" secondItem="gEe-l3-wBQ" secondAttribute="bottom" constant="21" id="3aA-CC-wg3"/>
+                            <constraint firstItem="fhr-4f-Zbd" firstAttribute="top" secondItem="gEe-l3-wBQ" secondAttribute="bottom" constant="8" id="32D-qa-WiJ"/>
                             <constraint firstItem="jhn-N1-ZDg" firstAttribute="top" secondItem="LIy-1k-faw" secondAttribute="bottom" constant="21" id="7B5-dv-h6s"/>
                             <constraint firstItem="45r-bS-2na" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="7ZN-Ta-kUA"/>
+                            <constraint firstItem="WgK-TF-QQZ" firstAttribute="top" secondItem="fhr-4f-Zbd" secondAttribute="bottom" constant="8" id="Ixm-8l-jip"/>
                             <constraint firstItem="jhn-N1-ZDg" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="Re3-ob-M7i"/>
-                            <constraint firstAttribute="bottom" secondItem="gEe-l3-wBQ" secondAttribute="bottom" constant="379" id="WPj-WA-9aI"/>
                             <constraint firstItem="gEe-l3-wBQ" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="WSB-bu-JoS"/>
                             <constraint firstItem="LIy-1k-faw" firstAttribute="top" secondItem="WgK-TF-QQZ" secondAttribute="bottom" constant="14" id="ZTR-YD-vAa"/>
                             <constraint firstItem="rDi-EK-6HW" firstAttribute="centerX" secondItem="Cqz-jz-Zyh" secondAttribute="centerX" id="acn-Fa-ujs"/>

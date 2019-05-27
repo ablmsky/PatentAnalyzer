@@ -83,9 +83,12 @@ class DataFromRequest: ViewModelModelData{
     func allToString()->String{//function to convert data for TextField
         //TODO check optional values
         var stringToReturn: String
-        stringToReturn = "\(self.countryData!.country)\n"
-        for element in self.countryData!.valuePerYear.reversed(){
-            stringToReturn.append(contentsOf: "Year: \(element?.year ?? 0)  -  Number of Patent: \(element?.value ?? 0)\n")
+        stringToReturn = String(self.countryData?.country ?? "Sorry!\n no available data for this country\n on this period :(")
+        stringToReturn.append("\n")
+        if (countryData != nil){
+            for element in self.countryData!.valuePerYear.reversed(){
+                stringToReturn.append(contentsOf: "Year: \(element?.year ?? 0)  -  Number of Patent: \(element?.value ?? 0)\n")
+            }
         }
         return stringToReturn
     }

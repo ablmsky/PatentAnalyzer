@@ -7,7 +7,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case AmericanSamoa
     case Andorra
     case Angola
-    case Anguilla
     case AntiguaAndBarbuda
     case Argentina
     case Armenia
@@ -29,7 +28,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case BosniaandHerzegovina
     case Botswana
     case Brazil
-    case BritishIndianOceanTerritory
     case BritishVirginIslands
     case Brunei
     case Bulgaria
@@ -44,11 +42,8 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Chad
     case Chile
     case China
-    case ChristmasIsland
-    case CocosIslands
     case Colombia
     case Comoros
-    case CookIslands
     case CostaRica
     case Croatia
     case Cuba
@@ -68,7 +63,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Eritrea
     case Estonia
     case Ethiopia
-    case FalklandIslands
     case FaroeIslands
     case Fiji
     case Finland
@@ -85,7 +79,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Grenada
     case Guam
     case Guatemala
-    case Guernsey
     case Guinea
     case GuineaBissau
     case Guyana
@@ -105,7 +98,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case IvoryCoast
     case Jamaica
     case Japan
-    case Jersey
     case Jordan
     case Kazakhstan
     case Kenya
@@ -133,14 +125,12 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case MarshallIslands
     case Mauritania
     case Mauritius
-    case Mayotte
     case Mexico
     case Micronesia
     case Moldova
     case Monaco
     case Mongolia
     case Montenegro
-    case Montserrat
     case Morocco
     case Mozambique
     case Myanmar
@@ -153,7 +143,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Nicaragua
     case Niger
     case Nigeria
-    case Niue
     case NorthKorea
     case NorthernMarianaIslands
     case Norway
@@ -166,22 +155,17 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Paraguay
     case Peru
     case Philippines
-    case Pitcairn
     case Poland
     case Portugal
     case PuertoRico
     case Qatar
     case RepublicOfTheCongo
-    case Reunion
     case Romania
     case Russia
     case Rwanda
-    case SaintBarthelemy
-    case SaintHelena
     case SaintKittsandNevis
     case SaintLucia
     case SaintMartin
-    case SaintPierreAndMiquelon
     case SaintVincentandtheGrenadines
     case Samoa
     case SanMarino
@@ -204,7 +188,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case SriLanka
     case Sudan
     case Suriname
-    case SvalbardandJanMayen
     case Swaziland
     case Sweden
     case Switzerland
@@ -214,7 +197,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Tanzania
     case Thailand
     case Togo
-    case Tokelau
     case Tonga
     case TrinidadandTobago
     case Tunisia
@@ -233,8 +215,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
     case Vanuatu
     case Venezuela
     case Vietnam
-    case WallisAndFutuna
-    case WesternSahara
     case Yemen
     case Zambia
     case Zimbabwe
@@ -251,7 +231,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .UnitedArabEmirates: return "AE"
             case .Afghanistan: return "AF"
             case .AntiguaAndBarbuda: return "AG"
-            case .Anguilla: return "AI"
             case .Albania: return "AL"
             case .Armenia: return "AM"
             case .Angola: return "AO"
@@ -270,35 +249,28 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Bahrain: return "BH"
             case .Burundi: return "BI"
             case .Benin: return "BJ"
-            case .SaintBarthelemy: return "BL"
             case .Bermuda: return "BM"
             case .Brunei: return "BN"
             case .Bolivia: return "BO"
-            //case .Bonaire: return "BQ"
             case .Brazil: return "BR"
             case .Bahamas: return "BS"
             case .Bhutan: return "BT"
-            //case .BouvetIsland: return "BV"
             case .Botswana: return "BW"
             case .Belarus: return "BY"
             case .Belize: return "BZ"
             case .Canada: return "CA"
-            case .CocosIslands: return "CC"
             case .DemocraticRepublicOfTheCongo: return "CD"
             case .CentralAfricanRepublic: return "CF"
             //case .Congo: return "CG"
             case .Switzerland: return "CH"
             case .IvoryCoast: return "CI"
-            case .CookIslands: return "CK"
             case .Chile: return "CL"
             case .Cameroon: return "CM"
             case .China: return "CN"
             case .Colombia: return "CO"
             case .CostaRica: return "CR"
             case .Cuba: return "CU"
-            //case .CaboVerde: return "CV"
             case .Curacao: return "CW"
-            case .ChristmasIsland: return "CX"
             case .Cyprus: return "CY"
             case .CzechRepublic: return "CZ"
             case .Germany: return "DE"
@@ -310,13 +282,11 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Ecuador: return "EC"
             case .Estonia: return "EE"
             case .Egypt: return "EG"
-            case .WesternSahara: return "EH"
             case .Eritrea: return "ER"
             case .Spain: return "ES"
             case .Ethiopia: return "ET"
             case .Finland: return "FI"
             case .Fiji: return "FJ"
-            case .FalklandIslands: return "FK"
             case .Micronesia: return "FM"
             case .FaroeIslands: return "FO"
             case .France: return "FR"
@@ -324,23 +294,18 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .UnitedKingdom: return "GB"
             case .Grenada: return "GD"
             case .Georgia: return "GE"
-            //case .FrenchGuiana: return "GF"
-            case .Guernsey: return "GG"
             case .Ghana: return "GH"
             case .Gibraltar: return "GI"
             case .Greenland: return "GL"
             case .Gambia: return "GM"
             case .Guinea: return "GN"
-            //case .Guadeloupe: return "GP"
             case .EquatorialGuinea: return "GQ"
             case .Greece: return "GR"
-            //case .SouthGeorgiaandtheSouthSandwichIslands: return "GS"
             case .Guatemala: return "GT"
             case .Guam: return "GU"
             case .GuineaBissau: return "GW"
             case .Guyana: return "GY"
             case .HongKong: return "HK"
-            //case .HeardIslandandMcDonaldIslands: return "HM"
             case .Honduras: return "HN"
             case .Croatia: return "HR"
             case .Haiti: return "HT"
@@ -350,12 +315,10 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Israel: return "IL"
             case .IsleofMan: return "IM"
             case .India: return "IN"
-            case .BritishIndianOceanTerritory: return "IO"
             case .Iraq: return "IQ"
             case .Iran: return "IR"
             case .Iceland: return "IS"
             case .Italy: return "IT"
-            case .Jersey: return "JE"
             case .Jamaica: return "JM"
             case .Jordan: return "JO"
             case .Japan: return "JP"
@@ -394,9 +357,7 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Mongolia: return "MN"
             case .Macau: return "MO"
             case .NorthernMarianaIslands: return "MP"
-            //case .Martinique: return "MQ"
             case .Mauritania: return "MR"
-            case .Montserrat: return "MS"
             case .Malta: return "MT"
             case .Mauritius: return "MU"
             case .Maldives: return "MV"
@@ -407,14 +368,12 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Namibia: return "NA"
             case .NewCaledonia: return "NC"
             case .Niger: return "NE"
-            //case .NorfolkIsland: return "NF"
             case .Nigeria: return "NG"
             case .Nicaragua: return "NI"
             case .Netherlands: return "NL"
             case .Norway: return "NO"
             case .Nepal: return "NP"
             case .Nauru: return "NR"
-            case .Niue: return "NU"
             case .NewZealand: return "NZ"
             case .Oman: return "OM"
             case .Panama: return "PA"
@@ -424,15 +383,12 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Philippines: return "PH"
             case .Pakistan: return "PK"
             case .Poland: return "PL"
-            case .SaintPierreAndMiquelon: return "PM"
-            case .Pitcairn: return "PN"
             case .PuertoRico: return "PR"
             case .Palestine: return "PS"
             case .Portugal: return "PT"
             case .Palau: return "PW"
             case .Paraguay: return "PY"
             case .Qatar: return "QA"
-            case .Reunion: return "RE"
             case .Romania: return "RO"
             case .Serbia: return "RS"
             case .Russia: return "RU"
@@ -443,9 +399,7 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Sudan: return "SD"
             case .Sweden: return "SE"
             case .Singapore: return "SG"
-            case .SaintHelena: return "SH"
             case .Slovenia: return "SI"
-            case .SvalbardandJanMayen: return "SJ"
             case .Slovakia: return "SK"
             case .SierraLeone: return "SL"
             case .SanMarino: return "SM"
@@ -462,7 +416,6 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .Togo: return "TG"
             case .Thailand: return "TH"
             case .Tajikistan: return "TJ"
-            case .Tokelau: return "TK"
             case .EastTimor: return "TL"
             case .Turkmenistan: return "TM"
             case .Tunisia: return "TN"
@@ -483,10 +436,8 @@ enum Country: String, CaseIterable{//kinda dictionary for each country and ISO c
             case .USVirginIslands: return "VI"
             case .Vietnam: return "VN"
             case .Vanuatu: return "VU"
-            case .WallisAndFutuna: return "WF"
             case .Samoa: return "WS"
             case .Yemen: return "YE"
-            case .Mayotte: return "YT"
             case .SouthAfrica: return "ZA"
             case .Zambia: return "ZM"
             case .Zimbabwe: return "ZW"
