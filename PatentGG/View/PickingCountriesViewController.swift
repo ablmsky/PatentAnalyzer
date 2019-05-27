@@ -11,8 +11,6 @@ import UIKit
 
 class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPickerViewDataSource {
     
-    
-    //changebale init
     public var gettingValues: ValueViewModel?
     
     @IBOutlet weak var pickerView: UIPickerView!

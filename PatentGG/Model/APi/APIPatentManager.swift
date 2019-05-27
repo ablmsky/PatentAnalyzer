@@ -45,8 +45,10 @@ extension APIPatentManager{
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 do {
+                    
                     let root = try decoder.decode(Root.self, from: data)
                     object = root.countryObjects
+                    
                 } catch { print(error) }
             
                 if (object.count>0){

@@ -23,7 +23,9 @@ struct SetRequest{
     }
     func makeRequest()->[CountryObject]{
         let countriesResponedResult = APIPatentManager()
-        countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: inputValue!)!)
+        
+        countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: self.inputValue!)!)
+        
         do{
             countriesResponedResult.responseResult = try countriesResponedResult.dataAndResponse(url: countriesResponedResult.url)
         } catch let error{
@@ -39,10 +41,15 @@ class DataFromRequest: ViewModelModelData{
     var outputValue: String?// value for some label/etc. to change in view
     var inputValuesInt: [Int]//here is years to select
     var countryData: CountryValues?
+    
+    
     init(requestSource: SetRequest, years: [Int]){
+        
         self.countryData = CountryValues(countriesData: requestSource.makeRequest())
+        
         self.countryData?.checkContent(elements: &self.countryData)
         self.inputValuesInt = years
+        
         if (self.countryData != nil){
             selectionByYears()
         }

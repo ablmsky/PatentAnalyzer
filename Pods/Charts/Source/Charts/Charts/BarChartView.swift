@@ -12,6 +12,7 @@
 import Foundation
 import CoreGraphics
 
+
 /// Chart that draws bars.
 open class BarChartView: BarLineChartViewBase, BarChartDataProvider
 {

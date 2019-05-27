@@ -11,7 +11,7 @@ import SPStorkController
 import Charts
 
 class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDelegate{
-   
+    
     var viewModelData: ViewModelModelData?
     var myScrollView = UIScrollView()
     let coordX = 6.5//step for x coordinate on charts view
@@ -20,6 +20,8 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
     var chartViewSecond = PieChartView()
     var textField = UITextView()
     var descriptionToPieChart = UILabel()
+    var group = DispatchGroup()
+    var activityIndicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,35 +31,48 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         self.view.backgroundColor = UIColor.darkGray
         let screenSize: CGRect = self.view.bounds
         let screenWidth = screenSize.width
+        
         //region init sizes
+        activityIndicator.center = self.view.center
+        activityIndicator.startAnimating()
+        self.view.addSubview(activityIndicator)
         chartViewFirst = BarChartView(frame: CGRect(x: coordX, y: 30, width: Double(screenWidth) - (coordX*2) , height: 450))
         textField = UITextView(frame: CGRect(x: coordX, y: 500, width: Double(screenWidth) - (coordX*2) , height: 100))
         chartViewSecond = PieChartView(frame: CGRect(x: coordX, y: 630, width: Double(screenWidth) - (coordX*2), height: 450))
         descriptionToPieChart = UILabel(frame: CGRect(x: coordX, y: 1050, width: Double(screenWidth) - (coordX*2), height: 50))
-        //checking available data
-        if (viewModelData!.countryData == nil){
-            chartViewFirst.noDataText = "Sorry, no available data"
-            chartViewSecond.noDataText = " "
-            chartViewFirst.noDataTextColor = UIColor.white
-            textField.backgroundColor = UIColor.darkGray
-            startingText = " "
-        }
-        else{
-            textField.text = viewModelData?.allToString()
-            setBarChart(dataPoints: viewModelData!.reorginizedYears(), values: viewModelData!.reorginizedValues())
-            setPieChart(dataPoints: viewModelData!.reorginizedYears(), values: viewModelData!.reorginizedValues())
-            startingText = textField.text
-            chartViewFirst.defaultValues()
-            chartViewSecond.defaultValues()
-            textField.defaultValues()
-            chartViewFirst.delegate = self
-            chartViewSecond.delegate = self
+        
+        chartViewFirst.noDataText = ""
+        textField.backgroundColor = UIColor.darkGray
+        
+        self.group.notify(queue: .main){
+            self.activityIndicator.stopAnimating()
+            self.textField.text = self.viewModelData?.allToString()
+            self.activityIndicator.stopAnimating()
+            if (self.viewModelData?.countryData != nil){
+                self.textField.text = self.viewModelData?.allToString()
+                self.setBarChart(dataPoints: self.viewModelData!.reorginizedYears(), values: self.viewModelData!.reorginizedValues())
+                self.setPieChart(dataPoints: self.viewModelData!.reorginizedYears(), values: self.viewModelData!.reorginizedValues())
+                self.startingText = self.textField.text
+                self.chartViewFirst.defaultValues()
+                self.chartViewSecond.defaultValues()
+                self.textField.defaultValues()
+                self.chartViewFirst.delegate = self
+                self.chartViewSecond.delegate = self
+                
+                self.descriptionToPieChart.text = "This chart demonstrate % from sum on period"
+                self.descriptionToPieChart.defaultValues()
+            }
+                
+            else{
+                self.chartViewFirst.noDataText = "Sorry, no available data"
+                self.chartViewSecond.noDataText = " "
+                self.chartViewFirst.noDataTextColor = UIColor.white
+                self.textField.backgroundColor = UIColor.darkGray
+                self.startingText = " "
+            }
             
-            descriptionToPieChart.text = "This chart demonstrate % from sum on period"
-            descriptionToPieChart.defaultValues()
         }
         
-        //adding elements to ScrollView
         myScrollView = UIScrollView(frame: self.view.bounds)
         myScrollView.addSubview(chartViewFirst)
         myScrollView.addSubview(textField)
@@ -71,6 +86,7 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
     }
     //region functions for BarChart
     func setBarChart(dataPoints: [String], values: [Int]) {
+        
         var dataEntries: [BarChartDataEntry] = []
         let formato:BarChartFormatter = BarChartFormatter(years: dataPoints)
         let xaxis:XAxis = XAxis()
@@ -93,7 +109,7 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         self.textField.text.append("Average number: \(viewModelData!.averageValue())\n")
         self.textField.text.append("Sum number: \(viewModelData!.sumValue())")
     }
-   
+    
     public func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         textField.text = "\nYear: \(getYearsByIndex(highlight.x)) - Number of Patents: \(Int(highlight.y))"
         textField.font = UIFont(name: textField.font!.fontName, size: 20)
@@ -102,7 +118,7 @@ class ChartViewController: UIViewController, ChartViewDelegate, UITextFieldDeleg
         })
         
     }
-   
+    
     func getYearsByIndex(_ index: Double) -> String{
         var array = viewModelData!.reorginizedYears()
         return array[Int(index)]

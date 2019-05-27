@@ -18,7 +18,6 @@
 		6F62872E2277793E004A052B /* logoForLoadScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F62872D2277793E004A052B /* logoForLoadScreen.png */; };
 		6F745142227851F0002A5C9F /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F745141227851F0002A5C9F /* ModelData.swift */; };
 		6F7638A8228050F000D8D184 /* ViewModelModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7638A7228050F000D8D184 /* ViewModelModelData.swift */; };
-		6F7638AA2280519000D8D184 /* ViewModelChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7638A92280519000D8D184 /* ViewModelChart.swift */; };
 		6F803A7A226BA17400AD5A69 /* ChartsAndStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F803A79226BA17400AD5A69 /* ChartsAndStatistic.swift */; };
 		6F81218C225A1C5800CE3FC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F81218B225A1C5800CE3FC3 /* AppDelegate.swift */; };
 		6F81218E225A1C5800CE3FC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F81218D225A1C5800CE3FC3 /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 		6F62872D2277793E004A052B /* logoForLoadScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoForLoadScreen.png; sourceTree = SOURCE_ROOT; };
 		6F745141227851F0002A5C9F /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		6F7638A7228050F000D8D184 /* ViewModelModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelModelData.swift; sourceTree = "<group>"; };
-		6F7638A92280519000D8D184 /* ViewModelChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelChart.swift; sourceTree = "<group>"; };
 		6F803A79226BA17400AD5A69 /* ChartsAndStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsAndStatistic.swift; sourceTree = "<group>"; };
 		6F812188225A1C5800CE3FC3 /* PatentGG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PatentGG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F81218B225A1C5800CE3FC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +116,6 @@
 			children = (
 				6F745141227851F0002A5C9F /* ModelData.swift */,
 				6FFCF1672279CAA800395134 /* ValuesReturning.swift */,
-				6F7638A92280519000D8D184 /* ViewModelChart.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -319,7 +316,6 @@
 				6FA84892227E0D2A0023AA97 /* ChartViewController.swift in Sources */,
 				6F81218E225A1C5800CE3FC3 /* ViewController.swift in Sources */,
 				6F120946225A634E0094928F /* CountryObject.swift in Sources */,
-				6F7638AA2280519000D8D184 /* ViewModelChart.swift in Sources */,
 				6FFCF1682279CAA800395134 /* ValuesReturning.swift in Sources */,
 				6F81218C225A1C5800CE3FC3 /* AppDelegate.swift in Sources */,
 				6F7638A8228050F000D8D184 /* ViewModelModelData.swift in Sources */,
@@ -483,7 +479,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ablmsky.PatentGG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -501,7 +497,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ablmsky.PatentGG;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

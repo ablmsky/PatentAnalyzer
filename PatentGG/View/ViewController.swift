@@ -21,10 +21,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
     
     @IBAction func onButtonClick(_ sender: Any) {
-        let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
-        viewModelData = DataFromRequest(requestSource: SetRequest(variable: labelView.text! ), years: years)// all getting data here
         let controller = ChartViewController()
-        controller.viewModelData = viewModelData
+        let years = [Int(labelYearFrom.text!)!,Int(labelYearTill.text!)!] //years to check
+        let text = self.labelView.text!
+        let group = DispatchGroup()
+        group.enter()
+        let queue = DispatchQueue.global(qos: .userInteractive)
+        queue.async{
+            
+            self.viewModelData = DataFromRequest(requestSource: SetRequest(variable: text), years: years)// all getting data here
+            //controller
+            controller.viewModelData = self.viewModelData
+            group.leave()
+            
+        }
+        
+        controller.group = group
         let transitionDelegate = SPStorkTransitioningDelegate()
         controller.transitioningDelegate = transitionDelegate
         controller.modalPresentationStyle = .custom
@@ -50,7 +62,6 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         }))
         alert.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)]), forKey: "attributedTitle")
         alert.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18,weight: UIFont.Weight.light)]), forKey: "attributedMessage")
-        //alert.view.backgroundColor = UIColor.darkGray
         alert.view.tintColor = UIColor.blue
         self.present(alert, animated: true, completion: nil)
     }
