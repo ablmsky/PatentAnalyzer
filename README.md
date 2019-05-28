@@ -3,9 +3,13 @@ This is my  iOS app, about patent.
 
 # Nowadays
 demo version 1.1 
+
     - function for showing info by regions was added
+    
     - some GCD updates
+    
     - function for comparing countries - still in progress (few days left)
+    
     - also left: changing API-working (response form server needed to be checking on errors), some interface updates, checking internet connection
 
 # Overall
