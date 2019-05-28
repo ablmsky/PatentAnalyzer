@@ -8,18 +8,27 @@
 
 import Foundation
 
-enum Regions: String, CaseIterable{
+enum Regions:  String, CaseIterable, CountryRegion{
+    
     case Europe
-    case NorthAmerica
-    case SouthAmerica
     case Africa
     case Asia
-    case Oceania
-    static func returnAllRegions()->[String]{
+    case NorthAmerica
+    case LatinAmerica
+    static func returnAllCountries()->[String]{
         var array: [String] = []
         for value in Regions.allCases {
             array.append(String(describing: value))
         }
         return array
+    }
+    func compareCountryAndCode(country: CountryRegion)->String{
+        switch country as! Regions{
+        case .Europe: return "EU"
+        case .NorthAmerica: return "XU"
+        case .LatinAmerica: return "ZJ"
+        case .Africa: return "ZQ"
+        case .Asia: return "Z4"
+        }
     }
 }

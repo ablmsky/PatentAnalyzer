@@ -11,9 +11,10 @@ struct URLCreating: FinalURLPoint{
     var baseURL: String
     var path: String
     var request: URL?
-    init(country: Country){
+    init(country: CountryRegion){
         self.baseURL = "https://api.worldbank.org"
-        self.path = "/v2/country/\(Country.compareCountryAndCode(country: country))/indicator/IP.PAT.RESD?format=json"
+    
+        self.path = "/v2/country/\(country.compareCountryAndCode(country: country))/indicator/IP.PAT.RESD?format=json"
         self.request = URL(string: baseURL+path)
     }
     public func getRequest() -> URL?{
@@ -25,7 +26,7 @@ struct URLCreating: FinalURLPoint{
 public class APIPatentManager: APIManager, CountryReturningProtocol {
     var url: URL?
     var responseResult: [CountryObject]
-    static func getURL(country: Country) -> URL?{
+    static func getURL(country: CountryRegion) -> URL?{
         let urlForSession = URLCreating(country: country)
         return urlForSession.getRequest()
     }

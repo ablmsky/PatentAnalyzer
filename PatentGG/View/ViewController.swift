@@ -62,7 +62,7 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource{
         }))
         alert.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)]), forKey: "attributedTitle")
         alert.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18,weight: UIFont.Weight.light)]), forKey: "attributedMessage")
-        alert.view.tintColor = UIColor.blue
+        alert.view.tintColor = UIColor.black
         self.present(alert, animated: true, completion: nil)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

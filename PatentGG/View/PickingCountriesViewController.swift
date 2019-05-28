@@ -55,7 +55,7 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
         yearsToCompare = []
         pickerView.dataSource = self
         pickerView.delegate = self
-        
+        createAlert(title: "Still in progress..", message: "Sorry, this function isn't availabel")
         
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -113,6 +113,19 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
         
     }
 
+}
+
+extension PickingCountriesViewController{
+    func createAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: {(action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.setValue(NSAttributedString(string: title, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.bold)]), forKey: "attributedTitle")
+        alert.setValue(NSAttributedString(string: message, attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18,weight: UIFont.Weight.light)]), forKey: "attributedMessage")
+        alert.view.tintColor = UIColor.black
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 

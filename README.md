@@ -1,9 +1,16 @@
 # PatentAnalyzer
-This is my first iOS app, about patent. 
+This is my  iOS app, about patent. 
+
+# Nowadays
+demo version 1.1 
+    - function for showing info by regions was added
+    - some GCD updates
+    - function for comparing countries - still in progress (few days left)
+    - also left: changing API-working (response form server needed to be checking on errors), some interface updates, checking internet connection
 
 So, what the goal?
 
-This application - my university project (not me idea at all actually)
+This application - my university project (not my idea at all, actually)
 
 What will be in this app?
 I get data from worlbank.org parse it and try to visualize all info.
@@ -15,7 +22,7 @@ Stack of technology which will be here:
   
   Some patterns like Observer
   
-  RxSwift for async and MVVM
+  RxSwift for async and MVVM (decided to don't use it)
   
   Working with a network (with Alamofire maybe)
   
@@ -25,8 +32,7 @@ Stack of technology which will be here:
   
   And try to follow SOLID rules.
   
-Demo version were completed! Watch gif.
-*freezes only here:)
+Demo version 1.0 Watch gif.
 
 ![](PatentAnalyzer.gif)
 

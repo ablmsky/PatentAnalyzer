@@ -23,8 +23,10 @@ struct SetRequest{
     }
     func makeRequest()->[CountryObject]{
         let countriesResponedResult = APIPatentManager()
+        var inputObject: CountryRegion
+        inputObject = Country(rawValue: self.inputValue!) ?? Regions (rawValue: self.inputValue!)!
+        countriesResponedResult.url = APIPatentManager.getURL(country: inputObject)
         
-        countriesResponedResult.url = APIPatentManager.getURL(country: Country(rawValue: self.inputValue!)!)
         
         do{
             countriesResponedResult.responseResult = try countriesResponedResult.dataAndResponse(url: countriesResponedResult.url)

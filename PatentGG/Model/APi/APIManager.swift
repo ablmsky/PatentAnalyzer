@@ -15,13 +15,13 @@ protocol FinalURLPoint {//to combine full request name
 }
 protocol APIManager{
     var url: URL?{ get set }
-    static func getURL(country: Country) -> URL?
+    static func getURL(country: CountryRegion) -> URL?
 }
 enum NetworkError: Error{
     case url
 }
 extension APIManager{
-    static func getURL(country: Country) -> URL?{
+    static func getURL(country: CountryRegion) -> URL?{
         let urlForSession = URLCreating(country: country)
         return urlForSession.getRequest()
     }
