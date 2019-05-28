@@ -1,5 +1,5 @@
 # PatentAnalyzer
-This is my  iOS app, about patent. 
+This is my  iOS app, about registered patents for country/region for year/years/period, with possibility of comparing countries. 
 
 # Nowadays
 demo version 1.1 
@@ -10,7 +10,7 @@ demo version 1.1
     
     - function for comparing countries - still in progress (few days left)
     
-    - also left: changing API-working (response form server needed to be checking on errors), some interface updates, checking internet connection
+    - also left: changing API-working (response from server needed to be checking on errors), some interface updates, checking internet connection
 
 # Overall
 
@@ -19,7 +19,7 @@ So, what the goal?
 This application - my university project (not my idea at all, actually)
 
 What will be in this app?
-I get data from worlbank.org parse it and try to visualize all info.
+I get data from worlbank.org get it and try to visualize all info.
 Like in example with charts from Charts Pod https://cocoapods.org/pods/Charts
 #
 Stack of technology which will be here:
@@ -32,14 +32,14 @@ Stack of technology which will be here:
   
   Working with a network (with Alamofire maybe)
   
-  Some Interface uniques libraries like Stork (already in app (ChartViewController))
+  Some Interface unique libraries like Stork (already in app (ChartViewController))
   
   Working with JSON
   
   And try to follow SOLID rules.
 #
   
-Demo version 1.0 Watch gif.
+Demo version 1.0 gif.
 
 ![](PatentAnalyzer.gif)
 
