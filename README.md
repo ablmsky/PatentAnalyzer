@@ -8,15 +8,10 @@ demo version 2.0
     
     - some interface update
     
-<<<<<<< HEAD
     - also left: changing API-working (response from server needed to be checking on errors), checking internet connection
-    - FIX THIS SHITTY BUG, idk how, but will try
-=======
-    - function for comparing countries - still in progress (few days left)
     
-    - also left: changing API-working (response from server needed to be checking on errors), some interface updates, checking internet connection
->>>>>>> cd4a01d01f872a9a5b51d0951dd290732af20bf1
-
+    - FIX THIS SHITTY BUG, idk how, but will try
+    
 # Bugs in this version
 for function "compare countries"
     
