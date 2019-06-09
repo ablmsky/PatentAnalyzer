@@ -2,16 +2,21 @@
 This is my  iOS app, about patent. 
 
 # Nowadays
-demo version 1.1 
+demo version 2.0 
 
-    - function for showing info by regions was added
+    - function for comparing countries were added
     
-    - some GCD updates
+    - some interface update
     
-    - function for comparing countries - still in progress (few days left)
-    
-    - also left: changing API-working (response form server needed to be checking on errors), some interface updates, checking internet connection
+    - also left: changing API-working (response from server needed to be checking on errors), checking internet connection
+    - FIX THIS SHITTY BUG, idk how, but will try
 
+# Bugs in this version
+for function "compare countries"
+    
+    - when you choosed smthng and got your info on screen, if you decide to go back, so firstly, before choosing date (only date for example), you need to go on first picker (where you choosing country). In another way you'll catch error:(
+    Sorry for this, will fix as soon as i can.
+    
 # Overall
 
 So, what the goal?

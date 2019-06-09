@@ -336,7 +336,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "580721437.001618"
+            timestampString = "581783620.623773"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -352,7 +352,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "580721437.001704"
+            timestampString = "581783620.62683"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -368,7 +368,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "580721437.001766"
+            timestampString = "581783620.6273119"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -384,7 +384,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/Model/Country/CountryObject.swift"
-            timestampString = "580721437.001822"
+            timestampString = "581783620.627908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -400,7 +400,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "580721437.001883"
+            timestampString = "580851571.778836"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -416,7 +416,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/View/ViewController.swift"
-            timestampString = "580721437.001946"
+            timestampString = "580847558.500209"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -432,7 +432,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "580721437.002005"
+            timestampString = "580851571.778926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "63"
@@ -480,7 +480,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PatentGG/ViewModel/ModelData.swift"
-            timestampString = "580721437.002085"
+            timestampString = "580851571.778985"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -502,6 +502,38 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "init(modelData:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/View/CompareChartViewController.swift"
+            timestampString = "581805999.5043221"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "setBarChart(dataPoints:valuesFirst:valuesSecond:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PatentGG/View/CompareChartViewController.swift"
+            timestampString = "581805999.504388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "setBarChart(dataPoints:valuesFirst:valuesSecond:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
