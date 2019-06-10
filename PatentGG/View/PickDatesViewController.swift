@@ -16,35 +16,34 @@ class PickDatesViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
     var gettingValues: ValueViewModel?
     
     var pickerView = UIPickerView()
-    var backButton = UIButton()
     var completeButton = UIButton()
     var countriesToCompare: [String]?
     var yearFrom,yearTill: Int?
+   
+    
+    var groupMain = DispatchGroup()
+    var yearsToCompare: [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         gettingValues = ValueViewModel()
         self.modalPresentationCapturesStatusBarAppearance = true
         let screenSize: CGRect = self.view.bounds
         let screenWidth = screenSize.width
         
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 30, width: screenWidth, height: 300))
-        completeButton = UIButton(frame: CGRect(x: Double(screenWidth) - 65, y: 17, width: 45, height: 10))
-        backButton = UIButton(frame: CGRect(x: 20, y: 17, width: 45, height: 10))
-        backButton.setTitle("Back", for: .normal)
-        backButton.showsTouchWhenHighlighted = true
-        completeButton.setTitle("Done", for: .normal)
-        completeButton.showsTouchWhenHighlighted = true
         
+        completeButton = UIButton(frame: CGRect(x: Double(screenWidth) - 65, y: 17, width: 45, height: 10))
+        completeButton.setTitle("Done", for: .normal)
+        completeButton.titleLabel!.font = .boldSystemFont(ofSize: 18)
+        completeButton.setTitleColor(.lightBlue, for: .normal)
+        completeButton.showsTouchWhenHighlighted = true
         completeButton.addTarget(self, action: #selector(buttonCompletePressed), for: .touchUpInside)
-        backButton.addTarget(self, action: #selector(buttonBackPressed), for: .touchUpInside)
         
         self.view.backgroundColor = .darkGray
         pickerView.dataSource = self
         pickerView.delegate = self
         self.view.addSubview(completeButton)
-        self.view.addSubview(backButton)
         self.view.addSubview(pickerView)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -72,42 +71,12 @@ class PickDatesViewController: UIViewController,UIPickerViewDelegate,UIPickerVie
         }
             return  NSAttributedString(string: String(gettingValues!.returnReversYears()[row]), attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
     }
-    @objc func buttonBackPressed(sender: UIButton!) {
-        dismiss(animated: true, completion: nil)
-    }
+    
     @objc func buttonCompletePressed(sender: UIButton!) {
         
-        let years = [yearFrom ?? 0, yearTill ?? 0]
-        let controller = CompareChartViewController()
-        let group = DispatchGroup()
-        let queue = DispatchQueue.global(qos: .userInteractive)
-        queue.async{
-            group.enter()
-            self.viewModelData = DataFromRequest(requestSource: SetRequest(variable: self.countriesToCompare![0]), years: years)// all getting data here
-            controller.viewModelDataFirstCountry = self.viewModelData
-            group.leave()
-        }
-        
-        queue.async{
-            group.enter()
-            self.viewModelData = DataFromRequest(requestSource: SetRequest(variable: self.countriesToCompare![1]), years: years)// all getting data here
-            //controller
-            controller.viewModelDataSecondCountry = self.viewModelData//watch out how to delegate data to barchart groupped
-            group.leave()
-        }
-        group.notify(queue: .main){
-            self.countriesToCompare = nil
-            self.yearFrom = nil
-            self.yearTill = nil
-        }
-        
-        controller.group = group
-        let transitionDelegate = SPStorkTransitioningDelegate()
-        controller.transitioningDelegate = transitionDelegate
-        controller.modalPresentationStyle = .custom
-        self.present(controller, animated: true,completion: nil)
-        
-        //self.dismiss(animated: true, completion: nil)
-        
+        yearsToCompare = [yearFrom ?? 1980,yearTill ?? 2017]
+        groupMain.leave()
+        self.dismiss(animated: true, completion: nil)
     }
 }
+

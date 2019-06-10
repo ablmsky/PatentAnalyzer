@@ -14,18 +14,22 @@ class CompareChartViewController: UIViewController, ChartViewDelegate, UITextFie
     
     var viewModelDataFirstCountry: ViewModelModelData?
     var viewModelDataSecondCountry: ViewModelModelData?
-    var myScrollView = UIScrollView()
     let coordX = 6.5//step for x coordinate on charts view
     var startingText: String?
     var chartViewFirst = BarChartView()
-    var textField = UITextView()
     var group = DispatchGroup()
     var activityIndicator = UIActivityIndicatorView()
+    var backButton = UIButton()
+    
+    //region text window elements
+    var textField = UITextView()
+    var scrollView = UIScrollView()
+    var firstCountryField = UITextView()
+    var secondCountryField = UITextView()
+    var yearsField = UITextView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        myScrollView.setNeedsLayout()
-        myScrollView.layoutIfNeeded()
         self.modalPresentationCapturesStatusBarAppearance = true
         self.view.backgroundColor = UIColor.darkGray
         let screenSize: CGRect = self.view.bounds
@@ -35,15 +39,48 @@ class CompareChartViewController: UIViewController, ChartViewDelegate, UITextFie
         activityIndicator.center = self.view.center
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
-        chartViewFirst = BarChartView(frame: CGRect(x: coordX, y: 30, width: Double(screenWidth) - (coordX*2) , height: 450))
-        textField = UITextView(frame: CGRect(x: 5*coordX, y: 500, width: Double(screenWidth) - (coordX*10) , height: 300))
+        chartViewFirst = BarChartView(frame: CGRect(x: coordX, y: 80, width: Double(screenWidth) - (coordX*2) , height: 450))
+        backButton = UIButton(frame: CGRect(x: 20, y: 57, width: 45, height: 10))
+        backButton.setTitle("Back", for: .normal)
+        backButton.setTitleColor(.lightBlue, for: .normal)
+        backButton.titleLabel!.font = .boldSystemFont(ofSize: 18)
+        backButton.showsTouchWhenHighlighted = true
+        backButton.addTarget(self, action: #selector(buttonBackPressed), for: .touchUpInside)
         
         chartViewFirst.noDataText = " "
-        textField.defaultValues()
+        
+        //region text window elements
+        scrollView = UIScrollView(frame: CGRect(x: 5*coordX, y: 550, width: Double(screenWidth) - (coordX*10) , height: 270))
+        
+        textField = UITextView(frame: CGRect(x: 0, y: 0, width: scrollView.bounds.width , height: 270))
+        
+        firstCountryField = UITextView(frame: CGRect(x: 0, y: 0, width: 100 , height: 840))
+        yearsField = UITextView(frame: CGRect(x: scrollView.bounds.width/2 - 50, y: 0, width: 100 , height: 840))
+        secondCountryField = UITextView(frame: CGRect(x: scrollView.bounds.width - 100, y: 0, width: 100, height: 840))
+        firstCountryField.defaultValues()
+        firstCountryField.isScrollEnabled = false
+        secondCountryField.isScrollEnabled = false
+        yearsField.isScrollEnabled = false
+        yearsField.defaultValues()
+        secondCountryField.defaultValues()
+        self.firstCountryField.font = UIFont(name: self.textField.font?.fontName ?? UIFont.systemFontSize.description , size: 30)
+        
+        scrollView.contentSize = CGSize(width: Double(screenWidth) - (coordX*10) ,height: 840)
+        scrollView.backgroundColor = .gray
+        scrollView.layer.cornerRadius = 5
+        scrollView.addSubview(textField)
+        scrollView.addSubview(firstCountryField)
+        scrollView.addSubview(yearsField)
+        scrollView.addSubview(secondCountryField)
+        
         
         self.group.notify(queue: .main){
-            self.textField.text = self.viewModelDataFirstCountry?.allToString()
+            self.comparingsToString()
             self.textField.font = UIFont(name: self.textField.font?.fontName ?? UIFont.systemFontSize.description , size: 20)
+            self.textField.defaultValues()
+            self.firstCountryField.font = UIFont(name: self.firstCountryField.font?.fontName ?? UIFont.systemFontSize.description , size: 18)
+            self.secondCountryField.font = UIFont(name: self.secondCountryField.font?.fontName ?? UIFont.systemFontSize.description , size: 18)
+            self.yearsField.font = UIFont(name: self.yearsField.font?.fontName ?? UIFont.systemFontSize.description , size: 18)
             self.activityIndicator.stopAnimating()
             if (self.viewModelDataFirstCountry?.countryData != nil && self.viewModelDataSecondCountry?.countryData != nil){
                 var yearPoints = self.viewModelDataFirstCountry!.reorginizedYears()
@@ -52,24 +89,27 @@ class CompareChartViewController: UIViewController, ChartViewDelegate, UITextFie
                 var valuesSecond = self.viewModelDataSecondCountry!.reorginizedValues()
                 valuesSecond.append(0)
                 yearPoints.append(String(Int(yearPoints[yearPoints.count-1]) ?? 0 + 1))
-                self.textField.text = self.comparingsToString()
+                //self.comparingsToString()
                 self.setBarChart(dataPoints: yearPoints, valuesFirst: valuesFirst, valuesSecond: valuesSecond)
                 
                 self.startingText = self.textField.text
                 self.chartViewFirst.defaultValues()
-
+                self.chartViewFirst.highlightPerTapEnabled = false
                 self.chartViewFirst.legend.enabled = true
-                self.textField.defaultValues()
+                //self.textField.defaultValues()
+                self.textField.backgroundColor = .gray
                 self.chartViewFirst.delegate = self
             }
             
         }
         
-        myScrollView = UIScrollView(frame: self.view.bounds)
-        myScrollView.addSubview(chartViewFirst)
-        myScrollView.addSubview(textField)
-        myScrollView.contentSize = CGSize(width: self.myScrollView.frame.size.width ,height: 830)
-        self.view.addSubview(myScrollView)
+        self.view.addSubview(backButton)
+        self.view.addSubview(chartViewFirst)
+        self.view.addSubview(scrollView)
+        
+    }
+    @objc func buttonBackPressed(sender: UIButton!) {
+         self.dismiss(animated: true, completion: nil)
     }
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
@@ -129,28 +169,36 @@ class CompareChartViewController: UIViewController, ChartViewDelegate, UITextFie
         var array = viewModelDataFirstCountry!.reorginizedYears()
         return array[Int(index)]
     }
-    func comparingsToString() -> String{
-        var stringToReturn: String
-        let countries = "\(self.viewModelDataFirstCountry?.countryData?.country ?? "")  \t\t\t\(self.viewModelDataSecondCountry?.countryData?.country ?? "")\n\n"
-        stringToReturn = String(countries)
-        stringToReturn.append("Value: \t\t Year: \t\t Value:\n")
+    func comparingsToString(){
+        
         if (viewModelDataFirstCountry?.countryData != nil && viewModelDataSecondCountry?.countryData != nil){
+            
+            self.firstCountryField.text = "\(self.viewModelDataFirstCountry?.countryData?.country ?? "")\n"
+            self.yearsField.text = "Years\n"
+            self.secondCountryField.text = "\(self.viewModelDataSecondCountry?.countryData?.country ?? "")\n"
             for i in 0..<(viewModelDataFirstCountry?.countryData?.valuePerYear.count)!{
-                stringToReturn.append(contentsOf: "\(viewModelDataFirstCountry!.countryData!.valuePerYear[i]!.value) \t\t\t \(viewModelDataFirstCountry!.countryData!.valuePerYear[i]!.year) \t\t\t \(viewModelDataSecondCountry!.countryData!.valuePerYear[i]!.value)\n")
+                self.firstCountryField.text.append("\(viewModelDataFirstCountry!.countryData!.valuePerYear[i]!.value)\n")
+            
+                self.secondCountryField.text.append("\(viewModelDataSecondCountry!.countryData!.valuePerYear[i]!.value)\n")
+                self.yearsField.text.append("\(viewModelDataFirstCountry!.countryData!.valuePerYear[i]!.year)\n")
+                
             }
+            
         }
         else{
+            self.firstCountryField.alpha = 0
+            self.secondCountryField.alpha = 0
+            self.yearsField.alpha = 0
             if(viewModelDataFirstCountry?.countryData == nil && viewModelDataSecondCountry?.countryData != nil){
-                stringToReturn = "Sorry!\n data available only for \(viewModelDataSecondCountry?.countryData?.country)\n on this period :("
+                textField.text = "Sorry!\n data available only for \((viewModelDataSecondCountry?.countryData?.country)!)\n on this period :("
             }
             if(viewModelDataSecondCountry?.countryData == nil && viewModelDataFirstCountry?.countryData != nil){
-                stringToReturn = "Sorry!\n data available only for \(viewModelDataFirstCountry?.countryData?.country)\n on this period :("
+                textField.text = "Sorry!\n data available only for \((viewModelDataFirstCountry?.countryData?.country)!)\n on this period :("
             }
             else{
-                stringToReturn = "Sorry!\n no available data for both countries\n on this period :("
+                textField.text = "Sorry!\n no available data for both countries\n on this period :("
             }
         }
-        return stringToReturn
     }
     
 }

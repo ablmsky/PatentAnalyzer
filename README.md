@@ -2,21 +2,18 @@
 This is my  iOS app, about registered patents for country/region for year/years/period, with possibility of comparing countries. 
 
 # Nowadays
-demo version 2.0 
+demo version 2.1 
 
-    - function for comparing countries were added
+    - everything from previous version were fixed
     
-    - some interface update
+    - keep in mind, sometimes data equals to 0, better to choose progressive countries 
     
-    - also left: changing API-working (response from server needed to be checking on errors), checking internet connection
-    
-    - FIX THIS SHITTY BUG, idk how, but will try
     
 # Bugs in this version
-for function "compare countries"
+for function Picker
     
-    - when you choosed smthng and got your info on screen, if you decide to go back, so firstly, before choosing date (only date for example), you need to go on first picker (where you choosing country). In another way you'll catch error:(
-    Sorry for this, will fix as soon as i can.
+    - when you scroll too fast, and don't waiting,when value will be shown on label, then catch an error
+    Sorry for this, but it's kinda of global problem, not a local things.
     
 # Overall
 

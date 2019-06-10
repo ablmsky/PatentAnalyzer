@@ -486,7 +486,8 @@
  
 We'll show you amount for each country by the years. 
 
-If you don't know, what you want to explore, choose one of our topics:</string>
+If you don't know, what you want to explore, choose one of our topics:
+Keep in mind, sometimes data equals to 0, better to choose progressive countries.</string>
                                 <color key="textColor" red="0.97649401426315308" green="0.97730976343154907" blue="0.93138855695724487" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

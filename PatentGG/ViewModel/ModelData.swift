@@ -24,10 +24,10 @@ struct SetRequest{
     func makeRequest()->[CountryObject]{
         let countriesResponedResult = APIPatentManager()
         var inputObject: CountryRegion
+        //something here
         inputObject = Country(rawValue: self.inputValue!) ?? Regions (rawValue: self.inputValue!)!
         countriesResponedResult.url = APIPatentManager.getURL(country: inputObject)
-        
-        
+
         do{
             countriesResponedResult.responseResult = try countriesResponedResult.dataAndResponse(url: countriesResponedResult.url)
         } catch let error{
@@ -83,7 +83,7 @@ class DataFromRequest: ViewModelModelData{
         self.countryData!.valuePerYear = array
     }
     func allToString()->String{//function to convert data for TextField
-        //TODO check optional values
+        
         var stringToReturn: String
         stringToReturn = String(self.countryData?.country ?? "Sorry!\n no available data for this country\n on this period :(")
         stringToReturn.append("\n")

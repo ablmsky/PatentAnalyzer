@@ -60,7 +60,7 @@ class CountryValues: CountryReturningProtocol{
         var valuePerYears = [ValuePerYear?](repeating: nil, count: countriesData.count)
         for i in 0..<countriesData.count{
             valuePerYears[i] = ValuePerYear(value: countriesData[i].value ?? 0, year: Int(countriesData[i].date) ?? 0)
-            print(ValuePerYear(value: countriesData[i].value ?? 0, year: Int(countriesData[i].date) ?? 0))
+            //print(ValuePerYear(value: countriesData[i].value ?? 0, year: Int(countriesData[i].date) ?? 0))
         }
         return valuePerYears
     }

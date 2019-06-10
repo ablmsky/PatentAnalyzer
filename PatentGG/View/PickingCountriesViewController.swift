@@ -14,7 +14,6 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
     
     public var viewModelData: ViewModelModelData?
     public var gettingValues: ValueViewModel?
-    //public var compareCountries: 
     
     @IBOutlet weak var comparableCountryLabel: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -24,7 +23,7 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
     @IBOutlet weak var optionalLabel: UILabel!
     
     var countriesToCompare = ["",""]
-    
+    var yearsToCompare: [Int]?
     
     @IBAction func onButtonCompletedPressed(_ sender: Any) {
         countriesToCompare[0] = countryLabel.text ?? ""
@@ -35,12 +34,54 @@ class PickingCountriesViewController: UIViewController,UIPickerViewDelegate,UIPi
         }
         else{
             let controller = PickDatesViewController()
+            let group = DispatchGroup()
+            let queue = DispatchQueue.global(qos: .userInteractive)
+            queue.sync {
+            group.enter()
             let transitionDelegate = SPStorkTransitioningDelegate()
             transitionDelegate.customHeight = 400
             controller.transitioningDelegate = transitionDelegate
+                controller.groupMain = group
+            
             controller.modalPresentationStyle = .custom
             controller.countriesToCompare = self.countriesToCompare
             self.present(controller, animated: true,completion: nil)
+            }
+            group.notify(queue: .main){
+                
+                self.yearsToCompare = controller.yearsToCompare
+                
+                print(self.yearsToCompare ?? [0,0])
+                
+                let controller = CompareChartViewController()
+                let group = DispatchGroup()
+                let queue = DispatchQueue.global(qos: .userInteractive)
+                queue.async{
+                    group.enter()
+                    self.viewModelData = DataFromRequest(requestSource: SetRequest(variable: self.countriesToCompare[0]), years: self.yearsToCompare ?? [0])// all getting data here
+                    controller.viewModelDataFirstCountry = self.viewModelData
+                    group.leave()
+                }
+                
+                queue.async{
+                    group.enter()
+                    self.viewModelData = DataFromRequest(requestSource: SetRequest(variable: self.countriesToCompare[1]), years: self.yearsToCompare ?? [0])// all getting data here
+                    //controller
+                    controller.viewModelDataSecondCountry = self.viewModelData
+                    group.leave()
+                }
+                group.notify(queue: .main){
+                    self.countriesToCompare = ["",""]
+                    self.yearsToCompare = nil
+                }
+                
+                controller.group = group
+                let transitionDelegate = SPStorkTransitioningDelegate()
+                controller.transitioningDelegate = transitionDelegate
+                controller.modalPresentationStyle = .custom
+                self.present(controller, animated: true,completion: nil)
+            }
+            
         }
     }
     override func viewDidLoad() {
